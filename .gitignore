@@ -1,0 +1,17 @@
+# Files to excludes
+
+**/*.rpt
+**/*.bsf
+**/*.done
+**/*.dpf
+**/*.rpt
+**/*.summary
+**/*.pin
+**/*.pof
+**/*.qws
+**/*.bak
+
+#Direc
+
+**/db
+**/incremental_db
