@@ -1,0 +1,20 @@
+|comparateur
+A[0] => Equal0.IN7
+A[1] => Equal0.IN6
+A[2] => Equal0.IN5
+A[3] => Equal0.IN4
+A[4] => Equal0.IN3
+A[5] => Equal0.IN2
+A[6] => Equal0.IN1
+A[7] => Equal0.IN0
+B[0] => Equal0.IN15
+B[1] => Equal0.IN14
+B[2] => Equal0.IN13
+B[3] => Equal0.IN12
+B[4] => Equal0.IN11
+B[5] => Equal0.IN10
+B[6] => Equal0.IN9
+B[7] => Equal0.IN8
+egal <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+

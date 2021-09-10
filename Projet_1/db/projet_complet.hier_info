@@ -1,0 +1,124 @@
+|projet_complet
+clk_50 => divFreq:inst1.clk_50MHz
+reset_freq => compteur:inst2.raz
+reset_freq => divFreq:inst1.reset
+a_out <= bcd7seg:inst3.a
+b_out <= bcd7seg:inst3.b
+c_out <= bcd7seg:inst3.c
+d_out <= bcd7seg:inst3.d
+e_out <= bcd7seg:inst3.e
+f_out <= bcd7seg:inst3.f
+g_out <= bcd7seg:inst3.g
+
+
+|projet_complet|divFreq:inst1
+clk_50MHz => clk_1Hz_interne.CLK
+clk_50MHz => count[25].CLK
+clk_50MHz => count[24].CLK
+clk_50MHz => count[23].CLK
+clk_50MHz => count[22].CLK
+clk_50MHz => count[21].CLK
+clk_50MHz => count[20].CLK
+clk_50MHz => count[19].CLK
+clk_50MHz => count[18].CLK
+clk_50MHz => count[17].CLK
+clk_50MHz => count[16].CLK
+clk_50MHz => count[15].CLK
+clk_50MHz => count[14].CLK
+clk_50MHz => count[13].CLK
+clk_50MHz => count[12].CLK
+clk_50MHz => count[11].CLK
+clk_50MHz => count[10].CLK
+clk_50MHz => count[9].CLK
+clk_50MHz => count[8].CLK
+clk_50MHz => count[7].CLK
+clk_50MHz => count[6].CLK
+clk_50MHz => count[5].CLK
+clk_50MHz => count[4].CLK
+clk_50MHz => count[3].CLK
+clk_50MHz => count[2].CLK
+clk_50MHz => count[1].CLK
+clk_50MHz => count[0].CLK
+reset => clk_1Hz_interne.ACLR
+reset => count[25].ACLR
+reset => count[24].ACLR
+reset => count[23].ACLR
+reset => count[22].ACLR
+reset => count[21].ACLR
+reset => count[20].ACLR
+reset => count[19].ACLR
+reset => count[18].ACLR
+reset => count[17].ACLR
+reset => count[16].ACLR
+reset => count[15].ACLR
+reset => count[14].ACLR
+reset => count[13].ACLR
+reset => count[12].ACLR
+reset => count[11].ACLR
+reset => count[10].ACLR
+reset => count[9].ACLR
+reset => count[8].ACLR
+reset => count[7].ACLR
+reset => count[6].ACLR
+reset => count[5].ACLR
+reset => count[4].ACLR
+reset => count[3].ACLR
+reset => count[2].ACLR
+reset => count[1].ACLR
+reset => count[0].ACLR
+clk_1Hz <= clk_1Hz_interne.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projet_complet|compteur:inst2
+clk => compteur[3].CLK
+clk => compteur[2].CLK
+clk => compteur[1].CLK
+clk => compteur[0].CLK
+raz => compteur~3.OUTPUTSELECT
+raz => compteur~2.OUTPUTSELECT
+raz => compteur~1.OUTPUTSELECT
+raz => compteur~0.OUTPUTSELECT
+q[0] <= compteur[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= compteur[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= compteur[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= compteur[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|projet_complet|bcd7seg:inst3
+E3E2E1E0[0] => Mux6.IN19
+E3E2E1E0[0] => Mux5.IN19
+E3E2E1E0[0] => Mux4.IN19
+E3E2E1E0[0] => Mux3.IN19
+E3E2E1E0[0] => Mux2.IN19
+E3E2E1E0[0] => Mux1.IN19
+E3E2E1E0[0] => Mux0.IN19
+E3E2E1E0[1] => Mux6.IN18
+E3E2E1E0[1] => Mux5.IN18
+E3E2E1E0[1] => Mux4.IN18
+E3E2E1E0[1] => Mux3.IN18
+E3E2E1E0[1] => Mux2.IN18
+E3E2E1E0[1] => Mux1.IN18
+E3E2E1E0[1] => Mux0.IN18
+E3E2E1E0[2] => Mux6.IN17
+E3E2E1E0[2] => Mux5.IN17
+E3E2E1E0[2] => Mux4.IN17
+E3E2E1E0[2] => Mux3.IN17
+E3E2E1E0[2] => Mux2.IN17
+E3E2E1E0[2] => Mux1.IN17
+E3E2E1E0[2] => Mux0.IN17
+E3E2E1E0[3] => Mux6.IN16
+E3E2E1E0[3] => Mux5.IN16
+E3E2E1E0[3] => Mux4.IN16
+E3E2E1E0[3] => Mux3.IN16
+E3E2E1E0[3] => Mux2.IN16
+E3E2E1E0[3] => Mux1.IN16
+E3E2E1E0[3] => Mux0.IN16
+a <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+b <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+c <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+d <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+e <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+f <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+g <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+
+

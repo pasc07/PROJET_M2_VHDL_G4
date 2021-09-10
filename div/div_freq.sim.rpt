@@ -1,0 +1,333 @@
+Simulator report for div_freq
+Fri Sep 10 08:12:09 2021
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 67 nodes     ;
+; Simulation Coverage         ;      17.39 % ;
+; Total Number of Transitions ; 648          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                           ;
++--------------------------------------------------------------------------------------------+---------------------------------+---------------+
+; Option                                                                                     ; Setting                         ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------+---------------+
+; Simulation mode                                                                            ; Timing                          ; Timing        ;
+; Start time                                                                                 ; 0 ns                            ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF                            ;               ;
+; Vector input source                                                                        ; ../compteur_simple/div_freq.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                              ; On            ;
+; Check outputs                                                                              ; Off                             ; Off           ;
+; Report simulation coverage                                                                 ; On                              ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                              ; On            ;
+; Display missing 1-value coverage report                                                    ; On                              ; On            ;
+; Display missing 0-value coverage report                                                    ; On                              ; On            ;
+; Detect setup and hold time violations                                                      ; Off                             ; Off           ;
+; Detect glitches                                                                            ; Off                             ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                             ; Off           ;
+; Generate Signal Activity File                                                              ; Off                             ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                             ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                             ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                              ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                      ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                             ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On                              ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                            ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      17.39 % ;
+; Total nodes checked                                 ; 67           ;
+; Total output ports checked                          ; 92           ;
+; Total output ports with complete 1/0-value coverage ; 16           ;
+; Total output ports with no 1/0-value coverage       ; 76           ;
+; Total output ports with no 1-value coverage         ; 76           ;
+; Total output ports with no 0-value coverage         ; 76           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                      ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |divFreq_q9|count[2]          ; |divFreq_q9|count[2]          ; regout           ;
+; |divFreq_q9|count[1]          ; |divFreq_q9|count[1]          ; regout           ;
+; |divFreq_q9|count[0]          ; |divFreq_q9|count[0]          ; regout           ;
+; |divFreq_q9|count[0]~52       ; |divFreq_q9|count[0]~52       ; combout          ;
+; |divFreq_q9|count[0]~52       ; |divFreq_q9|count[0]~53       ; cout             ;
+; |divFreq_q9|count[1]~54       ; |divFreq_q9|count[1]~54       ; combout          ;
+; |divFreq_q9|count[1]~54       ; |divFreq_q9|count[1]~55       ; cout             ;
+; |divFreq_q9|count[2]~56       ; |divFreq_q9|count[2]~56       ; combout          ;
+; |divFreq_q9|clk_1Hz_interne   ; |divFreq_q9|clk_1Hz_interne   ; regout           ;
+; |divFreq_q9|LessThan0~0       ; |divFreq_q9|LessThan0~0       ; combout          ;
+; |divFreq_q9|LessThan0~4       ; |divFreq_q9|LessThan0~4       ; combout          ;
+; |divFreq_q9|clk_1Hz_interne~0 ; |divFreq_q9|clk_1Hz_interne~0 ; combout          ;
+; |divFreq_q9|LessThan0~7       ; |divFreq_q9|LessThan0~7       ; combout          ;
+; |divFreq_q9|clk_1Hz           ; |divFreq_q9|clk_1Hz           ; padio            ;
+; |divFreq_q9|clk_50MHz         ; |divFreq_q9|clk_50MHz~corein  ; combout          ;
+; |divFreq_q9|clk_50MHz~clkctrl ; |divFreq_q9|clk_50MHz~clkctrl ; outclk           ;
++-------------------------------+-------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                 ;
++---------------------------+---------------------------+------------------+
+; Node Name                 ; Output Port Name          ; Output Port Type ;
++---------------------------+---------------------------+------------------+
+; |divFreq_q9|count[3]      ; |divFreq_q9|count[3]      ; regout           ;
+; |divFreq_q9|count[4]      ; |divFreq_q9|count[4]      ; regout           ;
+; |divFreq_q9|count[5]      ; |divFreq_q9|count[5]      ; regout           ;
+; |divFreq_q9|count[6]      ; |divFreq_q9|count[6]      ; regout           ;
+; |divFreq_q9|count[7]      ; |divFreq_q9|count[7]      ; regout           ;
+; |divFreq_q9|count[8]      ; |divFreq_q9|count[8]      ; regout           ;
+; |divFreq_q9|count[9]      ; |divFreq_q9|count[9]      ; regout           ;
+; |divFreq_q9|count[10]     ; |divFreq_q9|count[10]     ; regout           ;
+; |divFreq_q9|count[11]     ; |divFreq_q9|count[11]     ; regout           ;
+; |divFreq_q9|count[12]     ; |divFreq_q9|count[12]     ; regout           ;
+; |divFreq_q9|count[13]     ; |divFreq_q9|count[13]     ; regout           ;
+; |divFreq_q9|count[14]     ; |divFreq_q9|count[14]     ; regout           ;
+; |divFreq_q9|count[15]     ; |divFreq_q9|count[15]     ; regout           ;
+; |divFreq_q9|count[16]     ; |divFreq_q9|count[16]     ; regout           ;
+; |divFreq_q9|count[17]     ; |divFreq_q9|count[17]     ; regout           ;
+; |divFreq_q9|count[18]     ; |divFreq_q9|count[18]     ; regout           ;
+; |divFreq_q9|count[19]     ; |divFreq_q9|count[19]     ; regout           ;
+; |divFreq_q9|count[20]     ; |divFreq_q9|count[20]     ; regout           ;
+; |divFreq_q9|count[21]     ; |divFreq_q9|count[21]     ; regout           ;
+; |divFreq_q9|count[22]     ; |divFreq_q9|count[22]     ; regout           ;
+; |divFreq_q9|count[23]     ; |divFreq_q9|count[23]     ; regout           ;
+; |divFreq_q9|count[24]     ; |divFreq_q9|count[24]     ; regout           ;
+; |divFreq_q9|count[25]     ; |divFreq_q9|count[25]     ; regout           ;
+; |divFreq_q9|count[2]~56   ; |divFreq_q9|count[2]~57   ; cout             ;
+; |divFreq_q9|count[3]~58   ; |divFreq_q9|count[3]~58   ; combout          ;
+; |divFreq_q9|count[3]~58   ; |divFreq_q9|count[3]~59   ; cout             ;
+; |divFreq_q9|count[4]~60   ; |divFreq_q9|count[4]~60   ; combout          ;
+; |divFreq_q9|count[4]~60   ; |divFreq_q9|count[4]~61   ; cout             ;
+; |divFreq_q9|count[5]~62   ; |divFreq_q9|count[5]~62   ; combout          ;
+; |divFreq_q9|count[5]~62   ; |divFreq_q9|count[5]~63   ; cout             ;
+; |divFreq_q9|count[6]~64   ; |divFreq_q9|count[6]~64   ; combout          ;
+; |divFreq_q9|count[6]~64   ; |divFreq_q9|count[6]~65   ; cout             ;
+; |divFreq_q9|count[7]~66   ; |divFreq_q9|count[7]~66   ; combout          ;
+; |divFreq_q9|count[7]~66   ; |divFreq_q9|count[7]~67   ; cout             ;
+; |divFreq_q9|count[8]~68   ; |divFreq_q9|count[8]~68   ; combout          ;
+; |divFreq_q9|count[8]~68   ; |divFreq_q9|count[8]~69   ; cout             ;
+; |divFreq_q9|count[9]~70   ; |divFreq_q9|count[9]~70   ; combout          ;
+; |divFreq_q9|count[9]~70   ; |divFreq_q9|count[9]~71   ; cout             ;
+; |divFreq_q9|count[10]~72  ; |divFreq_q9|count[10]~72  ; combout          ;
+; |divFreq_q9|count[10]~72  ; |divFreq_q9|count[10]~73  ; cout             ;
+; |divFreq_q9|count[11]~74  ; |divFreq_q9|count[11]~74  ; combout          ;
+; |divFreq_q9|count[11]~74  ; |divFreq_q9|count[11]~75  ; cout             ;
+; |divFreq_q9|count[12]~76  ; |divFreq_q9|count[12]~76  ; combout          ;
+; |divFreq_q9|count[12]~76  ; |divFreq_q9|count[12]~77  ; cout             ;
+; |divFreq_q9|count[13]~78  ; |divFreq_q9|count[13]~78  ; combout          ;
+; |divFreq_q9|count[13]~78  ; |divFreq_q9|count[13]~79  ; cout             ;
+; |divFreq_q9|count[14]~80  ; |divFreq_q9|count[14]~80  ; combout          ;
+; |divFreq_q9|count[14]~80  ; |divFreq_q9|count[14]~81  ; cout             ;
+; |divFreq_q9|count[15]~82  ; |divFreq_q9|count[15]~82  ; combout          ;
+; |divFreq_q9|count[15]~82  ; |divFreq_q9|count[15]~83  ; cout             ;
+; |divFreq_q9|count[16]~84  ; |divFreq_q9|count[16]~84  ; combout          ;
+; |divFreq_q9|count[16]~84  ; |divFreq_q9|count[16]~85  ; cout             ;
+; |divFreq_q9|count[17]~86  ; |divFreq_q9|count[17]~86  ; combout          ;
+; |divFreq_q9|count[17]~86  ; |divFreq_q9|count[17]~87  ; cout             ;
+; |divFreq_q9|count[18]~88  ; |divFreq_q9|count[18]~88  ; combout          ;
+; |divFreq_q9|count[18]~88  ; |divFreq_q9|count[18]~89  ; cout             ;
+; |divFreq_q9|count[19]~90  ; |divFreq_q9|count[19]~90  ; combout          ;
+; |divFreq_q9|count[19]~90  ; |divFreq_q9|count[19]~91  ; cout             ;
+; |divFreq_q9|count[20]~92  ; |divFreq_q9|count[20]~92  ; combout          ;
+; |divFreq_q9|count[20]~92  ; |divFreq_q9|count[20]~93  ; cout             ;
+; |divFreq_q9|count[21]~94  ; |divFreq_q9|count[21]~94  ; combout          ;
+; |divFreq_q9|count[21]~94  ; |divFreq_q9|count[21]~95  ; cout             ;
+; |divFreq_q9|count[22]~96  ; |divFreq_q9|count[22]~96  ; combout          ;
+; |divFreq_q9|count[22]~96  ; |divFreq_q9|count[22]~97  ; cout             ;
+; |divFreq_q9|count[23]~98  ; |divFreq_q9|count[23]~98  ; combout          ;
+; |divFreq_q9|count[23]~98  ; |divFreq_q9|count[23]~99  ; cout             ;
+; |divFreq_q9|count[24]~100 ; |divFreq_q9|count[24]~100 ; combout          ;
+; |divFreq_q9|count[24]~100 ; |divFreq_q9|count[24]~101 ; cout             ;
+; |divFreq_q9|count[25]~102 ; |divFreq_q9|count[25]~102 ; combout          ;
+; |divFreq_q9|LessThan0~1   ; |divFreq_q9|LessThan0~1   ; combout          ;
+; |divFreq_q9|LessThan0~2   ; |divFreq_q9|LessThan0~2   ; combout          ;
+; |divFreq_q9|LessThan0~3   ; |divFreq_q9|LessThan0~3   ; combout          ;
+; |divFreq_q9|LessThan0~5   ; |divFreq_q9|LessThan0~5   ; combout          ;
+; |divFreq_q9|LessThan0~6   ; |divFreq_q9|LessThan0~6   ; combout          ;
+; |divFreq_q9|reset         ; |divFreq_q9|reset~corein  ; combout          ;
+; |divFreq_q9|reset~clkctrl ; |divFreq_q9|reset~clkctrl ; outclk           ;
++---------------------------+---------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                 ;
++---------------------------+---------------------------+------------------+
+; Node Name                 ; Output Port Name          ; Output Port Type ;
++---------------------------+---------------------------+------------------+
+; |divFreq_q9|count[3]      ; |divFreq_q9|count[3]      ; regout           ;
+; |divFreq_q9|count[4]      ; |divFreq_q9|count[4]      ; regout           ;
+; |divFreq_q9|count[5]      ; |divFreq_q9|count[5]      ; regout           ;
+; |divFreq_q9|count[6]      ; |divFreq_q9|count[6]      ; regout           ;
+; |divFreq_q9|count[7]      ; |divFreq_q9|count[7]      ; regout           ;
+; |divFreq_q9|count[8]      ; |divFreq_q9|count[8]      ; regout           ;
+; |divFreq_q9|count[9]      ; |divFreq_q9|count[9]      ; regout           ;
+; |divFreq_q9|count[10]     ; |divFreq_q9|count[10]     ; regout           ;
+; |divFreq_q9|count[11]     ; |divFreq_q9|count[11]     ; regout           ;
+; |divFreq_q9|count[12]     ; |divFreq_q9|count[12]     ; regout           ;
+; |divFreq_q9|count[13]     ; |divFreq_q9|count[13]     ; regout           ;
+; |divFreq_q9|count[14]     ; |divFreq_q9|count[14]     ; regout           ;
+; |divFreq_q9|count[15]     ; |divFreq_q9|count[15]     ; regout           ;
+; |divFreq_q9|count[16]     ; |divFreq_q9|count[16]     ; regout           ;
+; |divFreq_q9|count[17]     ; |divFreq_q9|count[17]     ; regout           ;
+; |divFreq_q9|count[18]     ; |divFreq_q9|count[18]     ; regout           ;
+; |divFreq_q9|count[19]     ; |divFreq_q9|count[19]     ; regout           ;
+; |divFreq_q9|count[20]     ; |divFreq_q9|count[20]     ; regout           ;
+; |divFreq_q9|count[21]     ; |divFreq_q9|count[21]     ; regout           ;
+; |divFreq_q9|count[22]     ; |divFreq_q9|count[22]     ; regout           ;
+; |divFreq_q9|count[23]     ; |divFreq_q9|count[23]     ; regout           ;
+; |divFreq_q9|count[24]     ; |divFreq_q9|count[24]     ; regout           ;
+; |divFreq_q9|count[25]     ; |divFreq_q9|count[25]     ; regout           ;
+; |divFreq_q9|count[2]~56   ; |divFreq_q9|count[2]~57   ; cout             ;
+; |divFreq_q9|count[3]~58   ; |divFreq_q9|count[3]~58   ; combout          ;
+; |divFreq_q9|count[3]~58   ; |divFreq_q9|count[3]~59   ; cout             ;
+; |divFreq_q9|count[4]~60   ; |divFreq_q9|count[4]~60   ; combout          ;
+; |divFreq_q9|count[4]~60   ; |divFreq_q9|count[4]~61   ; cout             ;
+; |divFreq_q9|count[5]~62   ; |divFreq_q9|count[5]~62   ; combout          ;
+; |divFreq_q9|count[5]~62   ; |divFreq_q9|count[5]~63   ; cout             ;
+; |divFreq_q9|count[6]~64   ; |divFreq_q9|count[6]~64   ; combout          ;
+; |divFreq_q9|count[6]~64   ; |divFreq_q9|count[6]~65   ; cout             ;
+; |divFreq_q9|count[7]~66   ; |divFreq_q9|count[7]~66   ; combout          ;
+; |divFreq_q9|count[7]~66   ; |divFreq_q9|count[7]~67   ; cout             ;
+; |divFreq_q9|count[8]~68   ; |divFreq_q9|count[8]~68   ; combout          ;
+; |divFreq_q9|count[8]~68   ; |divFreq_q9|count[8]~69   ; cout             ;
+; |divFreq_q9|count[9]~70   ; |divFreq_q9|count[9]~70   ; combout          ;
+; |divFreq_q9|count[9]~70   ; |divFreq_q9|count[9]~71   ; cout             ;
+; |divFreq_q9|count[10]~72  ; |divFreq_q9|count[10]~72  ; combout          ;
+; |divFreq_q9|count[10]~72  ; |divFreq_q9|count[10]~73  ; cout             ;
+; |divFreq_q9|count[11]~74  ; |divFreq_q9|count[11]~74  ; combout          ;
+; |divFreq_q9|count[11]~74  ; |divFreq_q9|count[11]~75  ; cout             ;
+; |divFreq_q9|count[12]~76  ; |divFreq_q9|count[12]~76  ; combout          ;
+; |divFreq_q9|count[12]~76  ; |divFreq_q9|count[12]~77  ; cout             ;
+; |divFreq_q9|count[13]~78  ; |divFreq_q9|count[13]~78  ; combout          ;
+; |divFreq_q9|count[13]~78  ; |divFreq_q9|count[13]~79  ; cout             ;
+; |divFreq_q9|count[14]~80  ; |divFreq_q9|count[14]~80  ; combout          ;
+; |divFreq_q9|count[14]~80  ; |divFreq_q9|count[14]~81  ; cout             ;
+; |divFreq_q9|count[15]~82  ; |divFreq_q9|count[15]~82  ; combout          ;
+; |divFreq_q9|count[15]~82  ; |divFreq_q9|count[15]~83  ; cout             ;
+; |divFreq_q9|count[16]~84  ; |divFreq_q9|count[16]~84  ; combout          ;
+; |divFreq_q9|count[16]~84  ; |divFreq_q9|count[16]~85  ; cout             ;
+; |divFreq_q9|count[17]~86  ; |divFreq_q9|count[17]~86  ; combout          ;
+; |divFreq_q9|count[17]~86  ; |divFreq_q9|count[17]~87  ; cout             ;
+; |divFreq_q9|count[18]~88  ; |divFreq_q9|count[18]~88  ; combout          ;
+; |divFreq_q9|count[18]~88  ; |divFreq_q9|count[18]~89  ; cout             ;
+; |divFreq_q9|count[19]~90  ; |divFreq_q9|count[19]~90  ; combout          ;
+; |divFreq_q9|count[19]~90  ; |divFreq_q9|count[19]~91  ; cout             ;
+; |divFreq_q9|count[20]~92  ; |divFreq_q9|count[20]~92  ; combout          ;
+; |divFreq_q9|count[20]~92  ; |divFreq_q9|count[20]~93  ; cout             ;
+; |divFreq_q9|count[21]~94  ; |divFreq_q9|count[21]~94  ; combout          ;
+; |divFreq_q9|count[21]~94  ; |divFreq_q9|count[21]~95  ; cout             ;
+; |divFreq_q9|count[22]~96  ; |divFreq_q9|count[22]~96  ; combout          ;
+; |divFreq_q9|count[22]~96  ; |divFreq_q9|count[22]~97  ; cout             ;
+; |divFreq_q9|count[23]~98  ; |divFreq_q9|count[23]~98  ; combout          ;
+; |divFreq_q9|count[23]~98  ; |divFreq_q9|count[23]~99  ; cout             ;
+; |divFreq_q9|count[24]~100 ; |divFreq_q9|count[24]~100 ; combout          ;
+; |divFreq_q9|count[24]~100 ; |divFreq_q9|count[24]~101 ; cout             ;
+; |divFreq_q9|count[25]~102 ; |divFreq_q9|count[25]~102 ; combout          ;
+; |divFreq_q9|LessThan0~1   ; |divFreq_q9|LessThan0~1   ; combout          ;
+; |divFreq_q9|LessThan0~2   ; |divFreq_q9|LessThan0~2   ; combout          ;
+; |divFreq_q9|LessThan0~3   ; |divFreq_q9|LessThan0~3   ; combout          ;
+; |divFreq_q9|LessThan0~5   ; |divFreq_q9|LessThan0~5   ; combout          ;
+; |divFreq_q9|LessThan0~6   ; |divFreq_q9|LessThan0~6   ; combout          ;
+; |divFreq_q9|reset         ; |divFreq_q9|reset~corein  ; combout          ;
+; |divFreq_q9|reset~clkctrl ; |divFreq_q9|reset~clkctrl ; outclk           ;
++---------------------------+---------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri Sep 10 08:12:08 2021
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off div_freq -c div_freq
+Info: Using vector source file "../compteur_simple/div_freq.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of div_freq.vwf called div_freq.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      17.39 %
+Info: Number of transitions in simulation is 648
+Info: Vector file div_freq.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 159 megabytes
+    Info: Processing ended: Fri Sep 10 08:12:09 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

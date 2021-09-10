@@ -1,0 +1,15 @@
+|compteur
+clk => compteur[3].CLK
+clk => compteur[2].CLK
+clk => compteur[1].CLK
+clk => compteur[0].CLK
+raz => compteur~3.OUTPUTSELECT
+raz => compteur~2.OUTPUTSELECT
+raz => compteur~1.OUTPUTSELECT
+raz => compteur~0.OUTPUTSELECT
+q[0] <= compteur[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= compteur[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= compteur[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= compteur[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

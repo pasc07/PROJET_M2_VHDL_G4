@@ -1,0 +1,357 @@
+Simulator report for projet_complet
+Fri Sep 10 10:18:18 2021
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 89 nodes     ;
+; Simulation Coverage         ;      30.70 % ;
+; Total Number of Transitions ; 721          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
+; Device                      ; EP2C35F672C6 ;
++-----------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                              ;
++--------------------------------------------------------------------------------------------+--------------------+---------------+
+; Option                                                                                     ; Setting            ; Default Value ;
++--------------------------------------------------------------------------------------------+--------------------+---------------+
+; Simulation mode                                                                            ; Timing             ; Timing        ;
+; Start time                                                                                 ; 0 ns               ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF               ;               ;
+; Vector input source                                                                        ; projet_complet.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; Off                ; On            ;
+; Check outputs                                                                              ; Off                ; Off           ;
+; Report simulation coverage                                                                 ; On                 ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                 ; On            ;
+; Display missing 1-value coverage report                                                    ; On                 ; On            ;
+; Display missing 0-value coverage report                                                    ; On                 ; On            ;
+; Detect setup and hold time violations                                                      ; Off                ; Off           ;
+; Detect glitches                                                                            ; Off                ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                ; Off           ;
+; Generate Signal Activity File                                                              ; Off                ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                 ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE         ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On                 ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto               ; Auto          ;
++--------------------------------------------------------------------------------------------+--------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      30.70 % ;
+; Total nodes checked                                 ; 89           ;
+; Total output ports checked                          ; 114          ;
+; Total output ports with complete 1/0-value coverage ; 35           ;
+; Total output ports with no 1/0-value coverage       ; 78           ;
+; Total output ports with no 1-value coverage         ; 78           ;
+; Total output ports with no 0-value coverage         ; 79           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                      ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+; Node Name                                             ; Output Port Name                                      ; Output Port Type ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+; |projet_complet|compteur:inst2|compteur[1]            ; |projet_complet|compteur:inst2|compteur[1]            ; regout           ;
+; |projet_complet|divFreq:inst1|count[2]                ; |projet_complet|divFreq:inst1|count[2]                ; regout           ;
+; |projet_complet|divFreq:inst1|count[1]                ; |projet_complet|divFreq:inst1|count[1]                ; regout           ;
+; |projet_complet|divFreq:inst1|count[0]                ; |projet_complet|divFreq:inst1|count[0]                ; regout           ;
+; |projet_complet|divFreq:inst1|count[0]~52             ; |projet_complet|divFreq:inst1|count[0]~52             ; combout          ;
+; |projet_complet|divFreq:inst1|count[0]~52             ; |projet_complet|divFreq:inst1|count[0]~53             ; cout             ;
+; |projet_complet|divFreq:inst1|count[1]~54             ; |projet_complet|divFreq:inst1|count[1]~54             ; combout          ;
+; |projet_complet|divFreq:inst1|count[1]~54             ; |projet_complet|divFreq:inst1|count[1]~55             ; cout             ;
+; |projet_complet|divFreq:inst1|count[2]~56             ; |projet_complet|divFreq:inst1|count[2]~56             ; combout          ;
+; |projet_complet|compteur:inst2|compteur[0]            ; |projet_complet|compteur:inst2|compteur[0]            ; regout           ;
+; |projet_complet|bcd7seg:inst3|Mux0~0                  ; |projet_complet|bcd7seg:inst3|Mux0~0                  ; combout          ;
+; |projet_complet|bcd7seg:inst3|Mux1~0                  ; |projet_complet|bcd7seg:inst3|Mux1~0                  ; combout          ;
+; |projet_complet|bcd7seg:inst3|Mux2~0                  ; |projet_complet|bcd7seg:inst3|Mux2~0                  ; combout          ;
+; |projet_complet|bcd7seg:inst3|Mux3~0                  ; |projet_complet|bcd7seg:inst3|Mux3~0                  ; combout          ;
+; |projet_complet|bcd7seg:inst3|Mux4~0                  ; |projet_complet|bcd7seg:inst3|Mux4~0                  ; combout          ;
+; |projet_complet|bcd7seg:inst3|Mux5~0                  ; |projet_complet|bcd7seg:inst3|Mux5~0                  ; combout          ;
+; |projet_complet|bcd7seg:inst3|Mux6~0                  ; |projet_complet|bcd7seg:inst3|Mux6~0                  ; combout          ;
+; |projet_complet|compteur:inst2|compteur~4             ; |projet_complet|compteur:inst2|compteur~4             ; combout          ;
+; |projet_complet|divFreq:inst1|clk_1Hz_interne         ; |projet_complet|divFreq:inst1|clk_1Hz_interne         ; regout           ;
+; |projet_complet|compteur:inst2|Add0~0                 ; |projet_complet|compteur:inst2|Add0~0                 ; combout          ;
+; |projet_complet|compteur:inst2|Add0~1                 ; |projet_complet|compteur:inst2|Add0~1                 ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~0             ; |projet_complet|divFreq:inst1|LessThan0~0             ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~4             ; |projet_complet|divFreq:inst1|LessThan0~4             ; combout          ;
+; |projet_complet|divFreq:inst1|clk_1Hz_interne~0       ; |projet_complet|divFreq:inst1|clk_1Hz_interne~0       ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~7             ; |projet_complet|divFreq:inst1|LessThan0~7             ; combout          ;
+; |projet_complet|a_out                                 ; |projet_complet|a_out                                 ; padio            ;
+; |projet_complet|b_out                                 ; |projet_complet|b_out                                 ; padio            ;
+; |projet_complet|c_out                                 ; |projet_complet|c_out                                 ; padio            ;
+; |projet_complet|d_out                                 ; |projet_complet|d_out                                 ; padio            ;
+; |projet_complet|e_out                                 ; |projet_complet|e_out                                 ; padio            ;
+; |projet_complet|f_out                                 ; |projet_complet|f_out                                 ; padio            ;
+; |projet_complet|g_out                                 ; |projet_complet|g_out                                 ; padio            ;
+; |projet_complet|clk_50                                ; |projet_complet|clk_50~corein                         ; combout          ;
+; |projet_complet|clk_50~clkctrl                        ; |projet_complet|clk_50~clkctrl                        ; outclk           ;
+; |projet_complet|divFreq:inst1|clk_1Hz_interne~clkctrl ; |projet_complet|divFreq:inst1|clk_1Hz_interne~clkctrl ; outclk           ;
++-------------------------------------------------------+-------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                     ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |projet_complet|compteur:inst2|compteur[3]  ; |projet_complet|compteur:inst2|compteur[3]  ; regout           ;
+; |projet_complet|divFreq:inst1|count[3]      ; |projet_complet|divFreq:inst1|count[3]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[4]      ; |projet_complet|divFreq:inst1|count[4]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[5]      ; |projet_complet|divFreq:inst1|count[5]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[6]      ; |projet_complet|divFreq:inst1|count[6]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[7]      ; |projet_complet|divFreq:inst1|count[7]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[8]      ; |projet_complet|divFreq:inst1|count[8]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[9]      ; |projet_complet|divFreq:inst1|count[9]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[10]     ; |projet_complet|divFreq:inst1|count[10]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[11]     ; |projet_complet|divFreq:inst1|count[11]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[12]     ; |projet_complet|divFreq:inst1|count[12]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[13]     ; |projet_complet|divFreq:inst1|count[13]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[14]     ; |projet_complet|divFreq:inst1|count[14]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[15]     ; |projet_complet|divFreq:inst1|count[15]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[16]     ; |projet_complet|divFreq:inst1|count[16]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[17]     ; |projet_complet|divFreq:inst1|count[17]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[18]     ; |projet_complet|divFreq:inst1|count[18]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[19]     ; |projet_complet|divFreq:inst1|count[19]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[20]     ; |projet_complet|divFreq:inst1|count[20]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[21]     ; |projet_complet|divFreq:inst1|count[21]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[22]     ; |projet_complet|divFreq:inst1|count[22]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[23]     ; |projet_complet|divFreq:inst1|count[23]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[24]     ; |projet_complet|divFreq:inst1|count[24]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[25]     ; |projet_complet|divFreq:inst1|count[25]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[2]~56   ; |projet_complet|divFreq:inst1|count[2]~57   ; cout             ;
+; |projet_complet|divFreq:inst1|count[3]~58   ; |projet_complet|divFreq:inst1|count[3]~58   ; combout          ;
+; |projet_complet|divFreq:inst1|count[3]~58   ; |projet_complet|divFreq:inst1|count[3]~59   ; cout             ;
+; |projet_complet|divFreq:inst1|count[4]~60   ; |projet_complet|divFreq:inst1|count[4]~60   ; combout          ;
+; |projet_complet|divFreq:inst1|count[4]~60   ; |projet_complet|divFreq:inst1|count[4]~61   ; cout             ;
+; |projet_complet|divFreq:inst1|count[5]~62   ; |projet_complet|divFreq:inst1|count[5]~62   ; combout          ;
+; |projet_complet|divFreq:inst1|count[5]~62   ; |projet_complet|divFreq:inst1|count[5]~63   ; cout             ;
+; |projet_complet|divFreq:inst1|count[6]~64   ; |projet_complet|divFreq:inst1|count[6]~64   ; combout          ;
+; |projet_complet|divFreq:inst1|count[6]~64   ; |projet_complet|divFreq:inst1|count[6]~65   ; cout             ;
+; |projet_complet|divFreq:inst1|count[7]~66   ; |projet_complet|divFreq:inst1|count[7]~66   ; combout          ;
+; |projet_complet|divFreq:inst1|count[7]~66   ; |projet_complet|divFreq:inst1|count[7]~67   ; cout             ;
+; |projet_complet|divFreq:inst1|count[8]~68   ; |projet_complet|divFreq:inst1|count[8]~68   ; combout          ;
+; |projet_complet|divFreq:inst1|count[8]~68   ; |projet_complet|divFreq:inst1|count[8]~69   ; cout             ;
+; |projet_complet|divFreq:inst1|count[9]~70   ; |projet_complet|divFreq:inst1|count[9]~70   ; combout          ;
+; |projet_complet|divFreq:inst1|count[9]~70   ; |projet_complet|divFreq:inst1|count[9]~71   ; cout             ;
+; |projet_complet|divFreq:inst1|count[10]~72  ; |projet_complet|divFreq:inst1|count[10]~72  ; combout          ;
+; |projet_complet|divFreq:inst1|count[10]~72  ; |projet_complet|divFreq:inst1|count[10]~73  ; cout             ;
+; |projet_complet|divFreq:inst1|count[11]~74  ; |projet_complet|divFreq:inst1|count[11]~74  ; combout          ;
+; |projet_complet|divFreq:inst1|count[11]~74  ; |projet_complet|divFreq:inst1|count[11]~75  ; cout             ;
+; |projet_complet|divFreq:inst1|count[12]~76  ; |projet_complet|divFreq:inst1|count[12]~76  ; combout          ;
+; |projet_complet|divFreq:inst1|count[12]~76  ; |projet_complet|divFreq:inst1|count[12]~77  ; cout             ;
+; |projet_complet|divFreq:inst1|count[13]~78  ; |projet_complet|divFreq:inst1|count[13]~78  ; combout          ;
+; |projet_complet|divFreq:inst1|count[13]~78  ; |projet_complet|divFreq:inst1|count[13]~79  ; cout             ;
+; |projet_complet|divFreq:inst1|count[14]~80  ; |projet_complet|divFreq:inst1|count[14]~80  ; combout          ;
+; |projet_complet|divFreq:inst1|count[14]~80  ; |projet_complet|divFreq:inst1|count[14]~81  ; cout             ;
+; |projet_complet|divFreq:inst1|count[15]~82  ; |projet_complet|divFreq:inst1|count[15]~82  ; combout          ;
+; |projet_complet|divFreq:inst1|count[15]~82  ; |projet_complet|divFreq:inst1|count[15]~83  ; cout             ;
+; |projet_complet|divFreq:inst1|count[16]~84  ; |projet_complet|divFreq:inst1|count[16]~84  ; combout          ;
+; |projet_complet|divFreq:inst1|count[16]~84  ; |projet_complet|divFreq:inst1|count[16]~85  ; cout             ;
+; |projet_complet|divFreq:inst1|count[17]~86  ; |projet_complet|divFreq:inst1|count[17]~86  ; combout          ;
+; |projet_complet|divFreq:inst1|count[17]~86  ; |projet_complet|divFreq:inst1|count[17]~87  ; cout             ;
+; |projet_complet|divFreq:inst1|count[18]~88  ; |projet_complet|divFreq:inst1|count[18]~88  ; combout          ;
+; |projet_complet|divFreq:inst1|count[18]~88  ; |projet_complet|divFreq:inst1|count[18]~89  ; cout             ;
+; |projet_complet|divFreq:inst1|count[19]~90  ; |projet_complet|divFreq:inst1|count[19]~90  ; combout          ;
+; |projet_complet|divFreq:inst1|count[19]~90  ; |projet_complet|divFreq:inst1|count[19]~91  ; cout             ;
+; |projet_complet|divFreq:inst1|count[20]~92  ; |projet_complet|divFreq:inst1|count[20]~92  ; combout          ;
+; |projet_complet|divFreq:inst1|count[20]~92  ; |projet_complet|divFreq:inst1|count[20]~93  ; cout             ;
+; |projet_complet|divFreq:inst1|count[21]~94  ; |projet_complet|divFreq:inst1|count[21]~94  ; combout          ;
+; |projet_complet|divFreq:inst1|count[21]~94  ; |projet_complet|divFreq:inst1|count[21]~95  ; cout             ;
+; |projet_complet|divFreq:inst1|count[22]~96  ; |projet_complet|divFreq:inst1|count[22]~96  ; combout          ;
+; |projet_complet|divFreq:inst1|count[22]~96  ; |projet_complet|divFreq:inst1|count[22]~97  ; cout             ;
+; |projet_complet|divFreq:inst1|count[23]~98  ; |projet_complet|divFreq:inst1|count[23]~98  ; combout          ;
+; |projet_complet|divFreq:inst1|count[23]~98  ; |projet_complet|divFreq:inst1|count[23]~99  ; cout             ;
+; |projet_complet|divFreq:inst1|count[24]~100 ; |projet_complet|divFreq:inst1|count[24]~100 ; combout          ;
+; |projet_complet|divFreq:inst1|count[24]~100 ; |projet_complet|divFreq:inst1|count[24]~101 ; cout             ;
+; |projet_complet|divFreq:inst1|count[25]~102 ; |projet_complet|divFreq:inst1|count[25]~102 ; combout          ;
+; |projet_complet|compteur:inst2|Add0~2       ; |projet_complet|compteur:inst2|Add0~2       ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~1   ; |projet_complet|divFreq:inst1|LessThan0~1   ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~2   ; |projet_complet|divFreq:inst1|LessThan0~2   ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~3   ; |projet_complet|divFreq:inst1|LessThan0~3   ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~5   ; |projet_complet|divFreq:inst1|LessThan0~5   ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~6   ; |projet_complet|divFreq:inst1|LessThan0~6   ; combout          ;
+; |projet_complet|reset_freq                  ; |projet_complet|reset_freq~corein           ; combout          ;
+; |projet_complet|reset_freq~clkctrl          ; |projet_complet|reset_freq~clkctrl          ; outclk           ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                     ;
++---------------------------------------------+---------------------------------------------+------------------+
+; Node Name                                   ; Output Port Name                            ; Output Port Type ;
++---------------------------------------------+---------------------------------------------+------------------+
+; |projet_complet|compteur:inst2|compteur[2]  ; |projet_complet|compteur:inst2|compteur[2]  ; regout           ;
+; |projet_complet|compteur:inst2|compteur[3]  ; |projet_complet|compteur:inst2|compteur[3]  ; regout           ;
+; |projet_complet|divFreq:inst1|count[3]      ; |projet_complet|divFreq:inst1|count[3]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[4]      ; |projet_complet|divFreq:inst1|count[4]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[5]      ; |projet_complet|divFreq:inst1|count[5]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[6]      ; |projet_complet|divFreq:inst1|count[6]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[7]      ; |projet_complet|divFreq:inst1|count[7]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[8]      ; |projet_complet|divFreq:inst1|count[8]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[9]      ; |projet_complet|divFreq:inst1|count[9]      ; regout           ;
+; |projet_complet|divFreq:inst1|count[10]     ; |projet_complet|divFreq:inst1|count[10]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[11]     ; |projet_complet|divFreq:inst1|count[11]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[12]     ; |projet_complet|divFreq:inst1|count[12]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[13]     ; |projet_complet|divFreq:inst1|count[13]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[14]     ; |projet_complet|divFreq:inst1|count[14]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[15]     ; |projet_complet|divFreq:inst1|count[15]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[16]     ; |projet_complet|divFreq:inst1|count[16]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[17]     ; |projet_complet|divFreq:inst1|count[17]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[18]     ; |projet_complet|divFreq:inst1|count[18]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[19]     ; |projet_complet|divFreq:inst1|count[19]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[20]     ; |projet_complet|divFreq:inst1|count[20]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[21]     ; |projet_complet|divFreq:inst1|count[21]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[22]     ; |projet_complet|divFreq:inst1|count[22]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[23]     ; |projet_complet|divFreq:inst1|count[23]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[24]     ; |projet_complet|divFreq:inst1|count[24]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[25]     ; |projet_complet|divFreq:inst1|count[25]     ; regout           ;
+; |projet_complet|divFreq:inst1|count[2]~56   ; |projet_complet|divFreq:inst1|count[2]~57   ; cout             ;
+; |projet_complet|divFreq:inst1|count[3]~58   ; |projet_complet|divFreq:inst1|count[3]~58   ; combout          ;
+; |projet_complet|divFreq:inst1|count[3]~58   ; |projet_complet|divFreq:inst1|count[3]~59   ; cout             ;
+; |projet_complet|divFreq:inst1|count[4]~60   ; |projet_complet|divFreq:inst1|count[4]~60   ; combout          ;
+; |projet_complet|divFreq:inst1|count[4]~60   ; |projet_complet|divFreq:inst1|count[4]~61   ; cout             ;
+; |projet_complet|divFreq:inst1|count[5]~62   ; |projet_complet|divFreq:inst1|count[5]~62   ; combout          ;
+; |projet_complet|divFreq:inst1|count[5]~62   ; |projet_complet|divFreq:inst1|count[5]~63   ; cout             ;
+; |projet_complet|divFreq:inst1|count[6]~64   ; |projet_complet|divFreq:inst1|count[6]~64   ; combout          ;
+; |projet_complet|divFreq:inst1|count[6]~64   ; |projet_complet|divFreq:inst1|count[6]~65   ; cout             ;
+; |projet_complet|divFreq:inst1|count[7]~66   ; |projet_complet|divFreq:inst1|count[7]~66   ; combout          ;
+; |projet_complet|divFreq:inst1|count[7]~66   ; |projet_complet|divFreq:inst1|count[7]~67   ; cout             ;
+; |projet_complet|divFreq:inst1|count[8]~68   ; |projet_complet|divFreq:inst1|count[8]~68   ; combout          ;
+; |projet_complet|divFreq:inst1|count[8]~68   ; |projet_complet|divFreq:inst1|count[8]~69   ; cout             ;
+; |projet_complet|divFreq:inst1|count[9]~70   ; |projet_complet|divFreq:inst1|count[9]~70   ; combout          ;
+; |projet_complet|divFreq:inst1|count[9]~70   ; |projet_complet|divFreq:inst1|count[9]~71   ; cout             ;
+; |projet_complet|divFreq:inst1|count[10]~72  ; |projet_complet|divFreq:inst1|count[10]~72  ; combout          ;
+; |projet_complet|divFreq:inst1|count[10]~72  ; |projet_complet|divFreq:inst1|count[10]~73  ; cout             ;
+; |projet_complet|divFreq:inst1|count[11]~74  ; |projet_complet|divFreq:inst1|count[11]~74  ; combout          ;
+; |projet_complet|divFreq:inst1|count[11]~74  ; |projet_complet|divFreq:inst1|count[11]~75  ; cout             ;
+; |projet_complet|divFreq:inst1|count[12]~76  ; |projet_complet|divFreq:inst1|count[12]~76  ; combout          ;
+; |projet_complet|divFreq:inst1|count[12]~76  ; |projet_complet|divFreq:inst1|count[12]~77  ; cout             ;
+; |projet_complet|divFreq:inst1|count[13]~78  ; |projet_complet|divFreq:inst1|count[13]~78  ; combout          ;
+; |projet_complet|divFreq:inst1|count[13]~78  ; |projet_complet|divFreq:inst1|count[13]~79  ; cout             ;
+; |projet_complet|divFreq:inst1|count[14]~80  ; |projet_complet|divFreq:inst1|count[14]~80  ; combout          ;
+; |projet_complet|divFreq:inst1|count[14]~80  ; |projet_complet|divFreq:inst1|count[14]~81  ; cout             ;
+; |projet_complet|divFreq:inst1|count[15]~82  ; |projet_complet|divFreq:inst1|count[15]~82  ; combout          ;
+; |projet_complet|divFreq:inst1|count[15]~82  ; |projet_complet|divFreq:inst1|count[15]~83  ; cout             ;
+; |projet_complet|divFreq:inst1|count[16]~84  ; |projet_complet|divFreq:inst1|count[16]~84  ; combout          ;
+; |projet_complet|divFreq:inst1|count[16]~84  ; |projet_complet|divFreq:inst1|count[16]~85  ; cout             ;
+; |projet_complet|divFreq:inst1|count[17]~86  ; |projet_complet|divFreq:inst1|count[17]~86  ; combout          ;
+; |projet_complet|divFreq:inst1|count[17]~86  ; |projet_complet|divFreq:inst1|count[17]~87  ; cout             ;
+; |projet_complet|divFreq:inst1|count[18]~88  ; |projet_complet|divFreq:inst1|count[18]~88  ; combout          ;
+; |projet_complet|divFreq:inst1|count[18]~88  ; |projet_complet|divFreq:inst1|count[18]~89  ; cout             ;
+; |projet_complet|divFreq:inst1|count[19]~90  ; |projet_complet|divFreq:inst1|count[19]~90  ; combout          ;
+; |projet_complet|divFreq:inst1|count[19]~90  ; |projet_complet|divFreq:inst1|count[19]~91  ; cout             ;
+; |projet_complet|divFreq:inst1|count[20]~92  ; |projet_complet|divFreq:inst1|count[20]~92  ; combout          ;
+; |projet_complet|divFreq:inst1|count[20]~92  ; |projet_complet|divFreq:inst1|count[20]~93  ; cout             ;
+; |projet_complet|divFreq:inst1|count[21]~94  ; |projet_complet|divFreq:inst1|count[21]~94  ; combout          ;
+; |projet_complet|divFreq:inst1|count[21]~94  ; |projet_complet|divFreq:inst1|count[21]~95  ; cout             ;
+; |projet_complet|divFreq:inst1|count[22]~96  ; |projet_complet|divFreq:inst1|count[22]~96  ; combout          ;
+; |projet_complet|divFreq:inst1|count[22]~96  ; |projet_complet|divFreq:inst1|count[22]~97  ; cout             ;
+; |projet_complet|divFreq:inst1|count[23]~98  ; |projet_complet|divFreq:inst1|count[23]~98  ; combout          ;
+; |projet_complet|divFreq:inst1|count[23]~98  ; |projet_complet|divFreq:inst1|count[23]~99  ; cout             ;
+; |projet_complet|divFreq:inst1|count[24]~100 ; |projet_complet|divFreq:inst1|count[24]~100 ; combout          ;
+; |projet_complet|divFreq:inst1|count[24]~100 ; |projet_complet|divFreq:inst1|count[24]~101 ; cout             ;
+; |projet_complet|divFreq:inst1|count[25]~102 ; |projet_complet|divFreq:inst1|count[25]~102 ; combout          ;
+; |projet_complet|compteur:inst2|Add0~2       ; |projet_complet|compteur:inst2|Add0~2       ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~1   ; |projet_complet|divFreq:inst1|LessThan0~1   ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~2   ; |projet_complet|divFreq:inst1|LessThan0~2   ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~3   ; |projet_complet|divFreq:inst1|LessThan0~3   ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~5   ; |projet_complet|divFreq:inst1|LessThan0~5   ; combout          ;
+; |projet_complet|divFreq:inst1|LessThan0~6   ; |projet_complet|divFreq:inst1|LessThan0~6   ; combout          ;
+; |projet_complet|reset_freq                  ; |projet_complet|reset_freq~corein           ; combout          ;
+; |projet_complet|reset_freq~clkctrl          ; |projet_complet|reset_freq~clkctrl          ; outclk           ;
++---------------------------------------------+---------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri Sep 10 10:18:18 2021
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off projet_complet -c projet_complet
+Info: Using vector source file "C:/TP_M2_SEWODA/Projet_1/projet_complet.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of projet_complet.vwf called projet_complet.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      30.70 %
+Info: Number of transitions in simulation is 721
+Info: Vector file projet_complet.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 159 megabytes
+    Info: Processing ended: Fri Sep 10 10:18:18 2021
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

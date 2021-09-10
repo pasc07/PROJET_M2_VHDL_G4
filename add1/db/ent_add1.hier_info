@@ -1,0 +1,56 @@
+|add1_
+S0 <= ent_add1:inst.S
+A0 => ent_add1:inst.A
+B0 => ent_add1:inst.B
+Cin => ent_add1:inst.Cin
+S1 <= ent_add1:inst1.S
+A1 => ent_add1:inst1.A
+B1 => ent_add1:inst1.B
+S2 <= ent_add1:inst2.S
+A2 => ent_add1:inst2.A
+B2 => ent_add1:inst2.B
+Cout <= ent_add1:inst2.Cout
+
+
+|add1_|ent_add1:inst
+A => Cout~3.IN0
+A => Cout~0.IN0
+A => S~0.IN0
+B => Cout~3.IN1
+B => Cout~1.IN1
+B => S~0.IN1
+Cin => Cout~1.IN0
+Cin => Cout~0.IN1
+Cin => S~1.IN0
+Cout <= Cout~4.DB_MAX_OUTPUT_PORT_TYPE
+S <= S~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add1_|ent_add1:inst1
+A => Cout~3.IN0
+A => Cout~0.IN0
+A => S~0.IN0
+B => Cout~3.IN1
+B => Cout~1.IN1
+B => S~0.IN1
+Cin => Cout~1.IN0
+Cin => Cout~0.IN1
+Cin => S~1.IN0
+Cout <= Cout~4.DB_MAX_OUTPUT_PORT_TYPE
+S <= S~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|add1_|ent_add1:inst2
+A => Cout~3.IN0
+A => Cout~0.IN0
+A => S~0.IN0
+B => Cout~3.IN1
+B => Cout~1.IN1
+B => S~0.IN1
+Cin => Cout~1.IN0
+Cin => Cout~0.IN1
+Cin => S~1.IN0
+Cout <= Cout~4.DB_MAX_OUTPUT_PORT_TYPE
+S <= S~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
