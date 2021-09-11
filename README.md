@@ -18,6 +18,11 @@ Additionneur ADD2x5 bits en utilisant les vecteurs en VHDL
 
 Un mini projet VHDL :projet_1
 But :  Permet de visualiser l'ecoulement du temps en seconde sur un afficheur 7 segement en utilisant l'oscillateur interne de 50MHz
+![image](https://user-images.githubusercontent.com/46537418/132960737-85ea5f12-ac52-4aa4-b262-9333f2041c84.png)
+Schéma fonctionnel
+
+Simulation 
+![image](https://user-images.githubusercontent.com/46537418/132962998-fbd851f1-8542-48e2-9358-7af6cfbd5013.png)
 
 Un mini projet: PWM 
 But: Générer une sortie PWM controllable en rapport cyclique et en fréquence.
