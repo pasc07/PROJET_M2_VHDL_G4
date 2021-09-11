@@ -5,8 +5,10 @@ L'additionneur 1 bit ADD1
 Additionneur ADD2x3 bits en utilisant les composants de ADD1 
 Additionneur ADD2x5 bits en utilisant les vecteurs en VHDL
 
-Un mini projet VHDL qiu permet de incrémenté un compteur chaque seconde (1Hz) en utilisant le quartz interne de 50MHz 
+Un mini projet VHDL :projet_1
+But :  Permet de visualiser l'ecoulement du temps en seconde sur un afficheur 7 segement en utilisant l'oscillateur interne de 50MHz
 
-Un mini projet PWM qui permet de générer une sortie PWM.
+Un mini projet: PWM 
+But: Générer une sortie PWM controllable en rapport cyclique et en fréquence.
 
 Un BE sur les barre frange pour le guidage des bateaux 
