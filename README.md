@@ -15,5 +15,7 @@ But: Générer une sortie PWM controllable en rapport cyclique et en fréquence.
 Simulation
 ![image](https://user-images.githubusercontent.com/46537418/132946648-fd1efd7e-8a6f-4b62-b53a-70ee6b6b0cb7.png)
 
-
+<p align="center">
+  <img src="C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\Image\pwm_simulation.png" width="350" title="hover text">
+</p>
 Un BE sur les barre frange pour le guidage des bateaux 
