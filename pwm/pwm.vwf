@@ -24,9 +24,21 @@ HEADER
 {
 	VERSION = 1;
 	TIME_UNIT = ns;
+	PRINT_OPTIONS = "Print_options_version 6\
+range_start 0ps\
+range_end 30.0us\
+width 1\
+names_percentage 25\
+comments 1\
+grid_lines 1\
+time_bars 1\
+name_every_page 0\
+expand_groups 0\
+print_all 1\
+print_row_height 100";
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 30000.0;
-	SIMULATION_TIME = 0.0;
+	DATA_DURATION = 20000.0;
+	SIMULATION_TIME = 30000.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 500.0;
 	GRID_DUTY_CYCLE = 50;
@@ -249,9 +261,9 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 150;
-			LEVEL 0 FOR 100.0;
-			LEVEL 1 FOR 100.0;
+			REPEAT = 1000;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 		}
 	}
 }
@@ -261,7 +273,7 @@ TRANSITION_LIST("DUTY[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -270,7 +282,7 @@ TRANSITION_LIST("DUTY[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -279,7 +291,7 @@ TRANSITION_LIST("DUTY[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -288,7 +300,7 @@ TRANSITION_LIST("DUTY[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -297,7 +309,7 @@ TRANSITION_LIST("DUTY[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 30000.0;
+		LEVEL 1 FOR 20000.0;
 	}
 }
 
@@ -306,7 +318,7 @@ TRANSITION_LIST("DUTY[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -315,7 +327,7 @@ TRANSITION_LIST("DUTY[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 1 FOR 20000.0;
 	}
 }
 
@@ -324,7 +336,7 @@ TRANSITION_LIST("DUTY[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -333,7 +345,7 @@ TRANSITION_LIST("FREQ[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -342,7 +354,7 @@ TRANSITION_LIST("FREQ[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -351,7 +363,7 @@ TRANSITION_LIST("FREQ[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 1 FOR 20000.0;
 	}
 }
 
@@ -360,7 +372,7 @@ TRANSITION_LIST("FREQ[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 1 FOR 20000.0;
 	}
 }
 
@@ -369,7 +381,7 @@ TRANSITION_LIST("FREQ[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -378,7 +390,7 @@ TRANSITION_LIST("FREQ[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -387,7 +399,7 @@ TRANSITION_LIST("FREQ[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 30000.0;
+		LEVEL 1 FOR 20000.0;
 	}
 }
 
@@ -396,7 +408,7 @@ TRANSITION_LIST("FREQ[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
@@ -405,7 +417,7 @@ TRANSITION_LIST("PWM_OUT")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 30000.0;
+		LEVEL X FOR 20000.0;
 	}
 }
 
@@ -414,7 +426,7 @@ TRANSITION_LIST("reset_n")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 30000.0;
+		LEVEL 0 FOR 20000.0;
 	}
 }
 
