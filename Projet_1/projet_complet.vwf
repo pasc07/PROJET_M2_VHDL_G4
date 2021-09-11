@@ -5,7 +5,7 @@ the Block Editor! File corruption is VERY likely to occur.
 */
 
 /*
-Copyright (C) 1991-2009 Altera Corporation
+Copyright (C) 1991-2010 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -37,10 +37,10 @@ expand_groups 0\
 print_all 1\
 print_row_height 100";
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 1000.0;
+	DATA_DURATION = 50000.0;
 	SIMULATION_TIME = 1000.0;
 	GRID_PHASE = 0.0;
-	GRID_PERIOD = 10.0;
+	GRID_PERIOD = 250.0;
 	GRID_DUTY_CYCLE = 50;
 }
 
@@ -139,13 +139,7 @@ TRANSITION_LIST("a_out")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 101.278;
-		LEVEL 1 FOR 199.65;
-		LEVEL 0 FOR 400.0;
-		LEVEL 1 FOR 0.171;
-		LEVEL 0 FOR 0.179;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 98.722;
+		LEVEL 0 FOR 50000.0;
 	}
 }
 
@@ -154,10 +148,7 @@ TRANSITION_LIST("b_out")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 700.826;
-		LEVEL 1 FOR 0.185;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 98.989;
+		LEVEL 0 FOR 50000.0;
 	}
 }
 
@@ -166,9 +157,7 @@ TRANSITION_LIST("c_out")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 301.26;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 498.74;
+		LEVEL 0 FOR 50000.0;
 	}
 }
 
@@ -179,9 +168,9 @@ TRANSITION_LIST("clk_50")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 50;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
+			REPEAT = 25;
+			LEVEL 0 FOR 1000.0;
+			LEVEL 1 FOR 1000.0;
 		}
 	}
 }
@@ -191,11 +180,7 @@ TRANSITION_LIST("d_out")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 101.007;
-		LEVEL 1 FOR 199.654;
-		LEVEL 0 FOR 400.346;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 98.993;
+		LEVEL 0 FOR 50000.0;
 	}
 }
 
@@ -204,10 +189,7 @@ TRANSITION_LIST("e_out")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 101.031;
-		LEVEL 1 FOR 200.0;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 498.969;
+		LEVEL 0 FOR 50000.0;
 	}
 }
 
@@ -216,9 +198,7 @@ TRANSITION_LIST("f_out")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 101.034;
-		LEVEL 1 FOR 599.654;
-		LEVEL 0 FOR 299.312;
+		LEVEL 0 FOR 50000.0;
 	}
 }
 
@@ -227,10 +207,7 @@ TRANSITION_LIST("g_out")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 300.816;
-		LEVEL 0 FOR 400.0;
-		LEVEL 1 FOR 0.164;
-		LEVEL 0 FOR 299.02;
+		LEVEL 0 FOR 50000.0;
 	}
 }
 
@@ -239,7 +216,7 @@ TRANSITION_LIST("reset_freq")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 50000.0;
 	}
 }
 
@@ -326,7 +303,7 @@ DISPLAY_LINE
 
 TIME_BAR
 {
-	TIME = 377725;
+	TIME = 1000000;
 	MASTER = TRUE;
 }
 ;

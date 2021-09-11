@@ -61,7 +61,6 @@ set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_N2 -to clk_50
 set_location_assignment PIN_N25 -to reset_freq
@@ -72,3 +71,4 @@ set_location_assignment PIN_AD11 -to d_out
 set_location_assignment PIN_AE11 -to e_out
 set_location_assignment PIN_V14 -to f_out
 set_location_assignment PIN_V13 -to g_out
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

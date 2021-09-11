@@ -14,11 +14,24 @@ port(
 end divFreq;
 
 architecture arch_divFreq of divFreq is
-signal count: std_logic_vector(25 downto 0);
+signal count: std_logic_vector(24 downto 0);
 signal clk_1Hz_interne : std_logic;
 begin
 -- mise en oeuvre de l'architecture 
--- DIVISION PAR 50 000 000 DE L'HORLOGE 50 MHZ
+-- Entree: clk_50 
+-- Sortie :clk_1Hz
+-- DIVISION PAR (25 000 000 - 1) DE L'HORLOGE de 50 MHZ
+-- Exemple soit f0 = 50 000 000Hz soit T0 = 20ns, 
+-- pour avoir f1 = 12 500 000 Hz soit T1 = 4x20ns = 80ns
+-- On compte les fronts montant count <= count +1 = [0,1,2,3] soit 4 periodes (division par 4)
+-- ie quand count = 3 on a 4x20 ns et 
+-- Etant donnee que la sortie clk_1Hz est alterné, pour avoir T1 = 1x80ns faut alterner 2 fois
+-- quand count = 1 (division par 2) ie a la moitie
+
+-- Ainsi pour avoir 1Hz a partir de 50 MHz il diviser par 50 000 000 soit count
+-- count = 25 000 000 - 1 = 0x17D783F
+ 
+
 process(clk_50MHz,reset)
 begin
 --Div par 50 000 000
@@ -26,11 +39,12 @@ if reset = '1' then
 	clk_1Hz_interne <= '0';
 	count <= (others => '0');
 elsif rising_edge(clk_50MHz) then
-	if count >= X"4" then --2FAF080
+	count <= count + X"1";
+	if count >= X"17D783F" then --2FAF080 or 17D783F
 		count <= (others => '0');
 		clk_1Hz_interne <= not clk_1Hz_interne;
-	else
-		count <= count + 1;
+	--else
+		--count <= count + 1;
 	end if;
 end if;
 end process;
