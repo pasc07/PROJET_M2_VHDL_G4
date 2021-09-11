@@ -11,6 +11,6 @@ end comparateur;
  
 architecture arch_comparateur of comparateur is
 begin
-    egal <= '1' when A=B else '0';
+    egal <= '1' when A<=B else '0';
      
 end arch_comparateur;
