@@ -47,7 +47,7 @@ end component;
 
 
 begin
---Descript et mapping
+--Description de systeme complet avec les cablages necessaire
 inst1: divFreq port map (clk_50,reset_freq,clk_1Hz_i);
 
 inst2: compteur port map (clk_1Hz_i,reset_freq,out_cpt);

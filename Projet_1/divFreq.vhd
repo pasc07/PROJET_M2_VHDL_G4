@@ -26,7 +26,7 @@ if reset = '1' then
 	clk_1Hz_interne <= '0';
 	count <= (others => '0');
 elsif rising_edge(clk_50MHz) then
-	if count >= X"2FAF080" then --2FAF080
+	if count >= X"4" then --2FAF080
 		count <= (others => '0');
 		clk_1Hz_interne <= not clk_1Hz_interne;
 	else

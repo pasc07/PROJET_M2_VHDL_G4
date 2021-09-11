@@ -1,6 +1,7 @@
 # PROJET_M2_VHDL_G4
 Projet d'électronique numérique en VHDL en Master 2 Systèmes et Microsystèmes Embarqués
 Ce dépôt contient les fichiers des TP de bases en VHDL a savoir :
+#Mini projet sur ADD1
 L'additionneur 1 bit ADD1
 ![image](https://user-images.githubusercontent.com/46537418/132959488-cafab95a-6b16-4168-9aa8-3d312b436997.png)
 
@@ -12,7 +13,7 @@ Additionneur ADD2x3 bits en utilisant les composants de ADD1
 Simulation
 ![image](https://user-images.githubusercontent.com/46537418/132959624-bd657c2a-1d35-4711-8eb5-184a4f39fb2a.png)
 
-
+#Mini projet sur les vecteurs (ADD5)
 Additionneur ADD2x5 bits en utilisant les vecteurs en VHDL
 
 Un mini projet VHDL :projet_1
