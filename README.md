@@ -13,6 +13,7 @@ But: Générer une sortie PWM controllable en rapport cyclique et en fréquence.
 ![image](https://user-images.githubusercontent.com/46537418/132946602-21228f71-f994-45d1-a766-49f3e69bb4c3.png)
 
 Simulation
+![image](https://user-images.githubusercontent.com/46537418/132946648-fd1efd7e-8a6f-4b62-b53a-70ee6b6b0cb7.png)
 
 
 Un BE sur les barre frange pour le guidage des bateaux 
