@@ -1,6 +1,7 @@
 # PROJET_M2_VHDL_G4
 Projet d'électronique numérique en VHDL en Master 2 Systèmes et Microsystèmes Embarqués
 Ce dépôt contient les fichiers des TP de bases en VHDL a savoir :
+
 #Mini projet sur ADD1
 L'additionneur 1 bit ADD1
 ![image](https://user-images.githubusercontent.com/46537418/132959488-cafab95a-6b16-4168-9aa8-3d312b436997.png)
@@ -24,7 +25,7 @@ But :  Permet de visualiser l'ecoulement du temps en seconde sur un afficheur 7 
 ![image](https://user-images.githubusercontent.com/46537418/132960737-85ea5f12-ac52-4aa4-b262-9333f2041c84.png)
 Schéma fonctionnel
 
-Simulation 
+Simulation pour f=500 000 Hz divisé par 4
 ![image](https://user-images.githubusercontent.com/46537418/132988526-37dd6906-7de6-478a-8e67-b286eb08fa54.png)
 
 Un mini projet: PWM 
