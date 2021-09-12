@@ -26,6 +26,7 @@ Schéma électrique de l'additionneur
 ![image](https://user-images.githubusercontent.com/46537418/132989362-a0fb615b-8feb-4054-ab78-467f62a1e718.png)
 
 Simulation de l'additionneur 2x5 bits
+![image](https://user-images.githubusercontent.com/46537418/132989780-f08d7a01-4bdb-41d2-b0c1-b833b4bc5f06.png)
 
 Un mini projet VHDL :projet_1
 But :  Permet de visualiser l'ecoulement du temps en seconde sur un afficheur 7 segments en utilisant l'oscillateur interne de 50MHz
