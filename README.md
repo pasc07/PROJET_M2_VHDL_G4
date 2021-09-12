@@ -15,11 +15,6 @@ Additionneur ADD2x3 bits en utilisant les composants de ADD1
 Simulation:
 ![image](https://user-images.githubusercontent.com/46537418/132959624-bd657c2a-1d35-4711-8eb5-184a4f39fb2a.png)
 
-Extrait de la simulation du compteur.
-![image](https://user-images.githubusercontent.com/46537418/132989822-b4e8819d-d23e-4c96-b4af-ea21ba8e74d7.png)
-
-
-
 #Mini projet sur les vecteurs (ADD5)
 Additionneur ADD2x5 bits en utilisant les vecteurs en VHDL.
 
