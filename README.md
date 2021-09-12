@@ -14,14 +14,21 @@ Additionneur ADD2x3 bits en utilisant les composants de ADD1
 
 Simulation:
 ![image](https://user-images.githubusercontent.com/46537418/132959624-bd657c2a-1d35-4711-8eb5-184a4f39fb2a.png)
+
 Extrait de la simulation du compteur.
+![image](https://user-images.githubusercontent.com/46537418/132989596-fdf1d114-738f-48d0-b5a0-be0f4bc4f11e.png)
 
 
 #Mini projet sur les vecteurs (ADD5)
-Additionneur ADD2x5 bits en utilisant les vecteurs en VHDL
+Additionneur ADD2x5 bits en utilisant les vecteurs en VHDL.
+
+Schéma électrique de l'additionneur
+![image](https://user-images.githubusercontent.com/46537418/132989362-a0fb615b-8feb-4054-ab78-467f62a1e718.png)
+
+Simulation de l'additionneur 2x5 bits
 
 Un mini projet VHDL :projet_1
-But :  Permet de visualiser l'ecoulement du temps en seconde sur un afficheur 7 segement en utilisant l'oscillateur interne de 50MHz
+But :  Permet de visualiser l'ecoulement du temps en seconde sur un afficheur 7 segments en utilisant l'oscillateur interne de 50MHz
 ![image](https://user-images.githubusercontent.com/46537418/132960737-85ea5f12-ac52-4aa4-b262-9333f2041c84.png)
 Schéma fonctionnel
 
