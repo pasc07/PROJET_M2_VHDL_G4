@@ -25,7 +25,7 @@ But :  Permet de visualiser l'ecoulement du temps en seconde sur un afficheur 7 
 Schéma fonctionnel
 
 Simulation 
-![image](https://user-images.githubusercontent.com/46537418/132962998-fbd851f1-8542-48e2-9358-7af6cfbd5013.png)
+![image](https://user-images.githubusercontent.com/46537418/132988526-37dd6906-7de6-478a-8e67-b286eb08fa54.png)
 
 Un mini projet: PWM 
 But: Générer une sortie PWM controllable en rapport cyclique et en fréquence.
