@@ -5,7 +5,7 @@ the Block Editor! File corruption is VERY likely to occur.
 */
 
 /*
-Copyright (C) 1991-2009 Altera Corporation
+Copyright (C) 1991-2010 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -388,10 +388,14 @@ TRANSITION_LIST("Cout")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 8007.111;
-		LEVEL 1 FOR 0.471;
-		LEVEL 0 FOR 0.487;
-		LEVEL 1 FOR 7991.931;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 8007.111;
+			LEVEL 1 FOR 0.471;
+			LEVEL 0 FOR 0.487;
+			LEVEL 1 FOR 7991.931;
+		}
 	}
 }
 
@@ -400,16 +404,20 @@ TRANSITION_LIST("s[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 4006.913;
-		LEVEL 1 FOR 0.497;
-		LEVEL 0 FOR 0.396;
-		LEVEL 1 FOR 3998.816;
-		LEVEL 0 FOR 0.788;
-		LEVEL 1 FOR 0.167;
-		LEVEL 0 FOR 3999.336;
-		LEVEL 1 FOR 0.497;
-		LEVEL 0 FOR 0.396;
-		LEVEL 1 FOR 3992.194;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 4006.913;
+			LEVEL 1 FOR 0.497;
+			LEVEL 0 FOR 0.396;
+			LEVEL 1 FOR 3998.816;
+			LEVEL 0 FOR 0.788;
+			LEVEL 1 FOR 0.167;
+			LEVEL 0 FOR 3999.336;
+			LEVEL 1 FOR 0.497;
+			LEVEL 0 FOR 0.396;
+			LEVEL 1 FOR 3992.194;
+		}
 	}
 }
 
@@ -522,7 +530,7 @@ DISPLAY_LINE
 DISPLAY_LINE
 {
 	CHANNEL = "a";
-	EXPAND_STATUS = EXPANDED;
+	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 1;
 	TREE_LEVEL = 0;
@@ -582,7 +590,7 @@ DISPLAY_LINE
 DISPLAY_LINE
 {
 	CHANNEL = "b";
-	EXPAND_STATUS = EXPANDED;
+	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 0;
@@ -642,7 +650,7 @@ DISPLAY_LINE
 DISPLAY_LINE
 {
 	CHANNEL = "s";
-	EXPAND_STATUS = EXPANDED;
+	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 13;
 	TREE_LEVEL = 0;

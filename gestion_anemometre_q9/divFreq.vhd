@@ -31,7 +31,7 @@ begin
 -- Ainsi pour avoir 1Hz a partir de 50 MHz il diviser par 50 000 000 soit count
 -- count = 25 000 000 - 1 = 0x17D783F
  
-
+--falling_edge(clk)
 process(clk_50MHz,reset)
 begin
 --Div par 50 000 000
