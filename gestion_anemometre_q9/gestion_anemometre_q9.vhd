@@ -14,7 +14,7 @@ port(
   continu : in std_logic;
   
   data_valid:out std_logic;
-  data_anemometre:out std_logic_vector (7 downto 0) );
+  data_anemometre:out std_logic_vector (24 downto 0) );
   
 end gestion_anemometre_q9 ;
 
@@ -23,49 +23,27 @@ end gestion_anemometre_q9 ;
 architecture arch_gestion_anemometre of gestion_anemometre_q9 is
 --For mapping
 signal clk_1Hz:std_logic;
-signal out_compteur: std_logic_vector(7 downto 0);
+signal out_compteur: std_logic_vector(24 downto 0);
 
 --Components
 
---diviseur
-component divFreq is
-port( 
-	clk_50MHz: in std_logic;
-	reset : in std_logic;
-	-- sortie
-	clk_1Hz: out std_logic );
-end component;
 
---Counter on n= 16 bits with clk and reset
-component compteur_n_bits is
-port( 
-	-- Entree & sortie
-	clk,raz : in std_logic;
-	q: out std_logic_vector(7 downto 0)
-	);
-end component;
 
 component compteur is
 port( 
 	-- Entree & sortie
 	clk,in_freq,raz : in std_logic;
-	q: out std_logic_vector(7 downto 0)
+	q: out std_logic_vector(24 downto 0);
+	valid: out std_logic
 	);
 end component;
 
---Comparison of 16 bits words
---component comparateur is
---port(   A,B  :      in  std_logic_vector(15 downto 0);
---    egal :      out     std_logic);
---end component;
-
 begin
 --Description and mapping
-inst1: divFreq port map (clk_50M, start_stop,clk_1Hz);
---inst2: compteur_n_bits port map (in_freq_anemometre,clk_1Hz,out_compteur);
-inst3: compteur port map (clk_50M,in_freq_anemometre,in_freq_anemometre,out_compteur);
+process(data) begin
 
+if continu = 
+inst3: compteur port map (clk_50M,in_freq_anemometre,in_freq_anemometre,out_compteur,data_valid);
 data_anemometre <= out_compteur;
-data_valid <= clk_1Hz;
-
+end process;
 end arch_gestion_anemometre;
