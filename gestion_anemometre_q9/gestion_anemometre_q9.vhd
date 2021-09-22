@@ -23,7 +23,9 @@ end gestion_anemometre_q9 ;
 architecture arch_gestion_anemometre of gestion_anemometre_q9 is
 --For mapping
 signal clk_1Hz:std_logic;
+signal temp_out_compteur: std_logic_vector(24 downto 0);
 signal out_compteur: std_logic_vector(24 downto 0);
+signal temp_valid : std_logic;
 
 --Components
 
@@ -38,12 +40,32 @@ port(
 	);
 end component;
 
+
+component divFreq is
+port( 
+	clk_50MHz: in std_logic;
+	reset : in std_logic;
+	-- sortie
+	clk_1Hz: out std_logic );
+end component;
+
+component memo is
+
+port( 
+	-- Entree & sortie
+	clk_50,clk,valid,continu,start_stop : in std_logic;
+	out_compteur: in std_logic_vector(24 downto 0);
+	q: out std_logic_vector(24 downto 0);
+	data_valid : out std_logic
+	);
+end component;
+
 begin
 --Description and mapping
-process(data) begin
 
-if continu = 
-inst3: compteur port map (clk_50M,in_freq_anemometre,in_freq_anemometre,out_compteur,data_valid);
+inst1: divFreq port map(clk_50M,raz_n,clk_1Hz);
+inst2: compteur port map(clk_50M,in_freq_anemometre,in_freq_anemometre,temp_out_compteur,temp_valid);
+inst3: memo port map (clk_50M,clk_1Hz,temp_valid,continu,start_stop,temp_out_compteur,out_compteur,data_valid);
+
 data_anemometre <= out_compteur;
-end process;
 end arch_gestion_anemometre;

@@ -21,9 +21,9 @@ signal temp: std_logic_vector(24 downto 0);
 begin
 -- mise en oeuvre de l'architecture
 -- OR FALLING_EDGE(clk)
-  PROCESS(clk,in_freq) BEGIN
+  PROCESS(clk) BEGIN
     IF RISING_EDGE(clk) THEN
-		  IF raz='0' THEN
+		  IF raz = '0' THEN
 			valid <= '1';
 			temp <= compteur;
 			compteur<=(OTHERS=>'0');
