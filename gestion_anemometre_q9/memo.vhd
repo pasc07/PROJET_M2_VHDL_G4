@@ -9,14 +9,14 @@ entity memo is
 port( 
 	-- Entree & sortie
 	clk,dispo : in std_logic;
-	out_compteur: in std_logic_vector(24 downto 0);
-	q: out std_logic_vector(24 downto 0)
+	out_compteur: in std_logic_vector(7 downto 0);
+	q: out std_logic_vector(7 downto 0)
 	);
 end memo;
 
 architecture arch_memo of memo is
 --Variables
-signal temp: std_logic_vector(24 downto 0);
+signal temp: std_logic_vector(7 downto 0);
 
 begin
 -- mise en oeuvre de l'architecture

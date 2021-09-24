@@ -14,7 +14,7 @@ port(
   continu : in std_logic;
   
   data_valid:out std_logic;
-  data_anemometre:out std_logic_vector (24 downto 0) );
+  data_anemometre:out std_logic_vector (7 downto 0) );
   
 end gestion_anemometre_q9 ;
 
@@ -22,9 +22,10 @@ end gestion_anemometre_q9 ;
 --Def de l'architecture
 architecture arch_gestion_anemometre of gestion_anemometre_q9 is
 --For mapping
+signal clk_05Hz:std_logic;
 signal clk_1Hz:std_logic;
-signal temp_out_compteur: std_logic_vector(24 downto 0);
-signal out_compteur: std_logic_vector(24 downto 0);
+signal temp_out_compteur: std_logic_vector(7 downto 0);
+signal out_compteur: std_logic_vector(7 downto 0);
 signal temp_valid : std_logic;
 
 --Components
@@ -35,7 +36,7 @@ component compteur is
 port( 
 	-- Entree & sortie
 	clk,in_freq,raz : in std_logic;
-	q: out std_logic_vector(24 downto 0);
+	q: out std_logic_vector(7 downto 0);
 	valid: out std_logic
 	);
 end component;
@@ -54,17 +55,27 @@ component memo is
 port( 
 	-- Entree & sortie
 	clk,dispo : in std_logic;
-	out_compteur: in std_logic_vector(24 downto 0);
-	q: out std_logic_vector(24 downto 0)
+	out_compteur: in std_logic_vector(7 downto 0);
+	q: out std_logic_vector(7 downto 0)
 	);
 end component;
+
+component refresh is
+port( 
+	clk_50MHz: in std_logic;
+	reset : in std_logic;
+	-- sortie
+	clk_1Hz: out std_logic );
+end component;
+
 
 begin
 --Description and mapping
 
 inst1: divFreq port map(clk_50M,raz_n,clk_1Hz);
-inst2: compteur port map(clk_50M,in_freq_anemometre,in_freq_anemometre,out_compteur,temp_valid);
+inst2: compteur port map(clk_1Hz,in_freq_anemometre,clk_1Hz,out_compteur,temp_valid);
 inst3: memo port map(clk_1Hz,temp_valid,out_compteur,temp_out_compteur);
+
 
 data_anemometre <= temp_out_compteur;
 data_valid <= temp_valid;
