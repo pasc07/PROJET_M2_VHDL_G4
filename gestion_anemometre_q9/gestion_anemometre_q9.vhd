@@ -53,10 +53,9 @@ component memo is
 
 port( 
 	-- Entree & sortie
-	clk_50,clk,valid,continu,start_stop : in std_logic;
+	clk,dispo : in std_logic;
 	out_compteur: in std_logic_vector(24 downto 0);
-	q: out std_logic_vector(24 downto 0);
-	data_valid : out std_logic
+	q: out std_logic_vector(24 downto 0)
 	);
 end component;
 
@@ -64,8 +63,10 @@ begin
 --Description and mapping
 
 inst1: divFreq port map(clk_50M,raz_n,clk_1Hz);
-inst2: compteur port map(clk_50M,in_freq_anemometre,in_freq_anemometre,temp_out_compteur,temp_valid);
-inst3: memo port map (clk_50M,clk_1Hz,temp_valid,continu,start_stop,temp_out_compteur,out_compteur,data_valid);
+inst2: compteur port map(clk_50M,in_freq_anemometre,in_freq_anemometre,out_compteur,temp_valid);
+inst3: memo port map(clk_1Hz,temp_valid,out_compteur,temp_out_compteur);
 
-data_anemometre <= out_compteur;
+data_anemometre <= temp_out_compteur;
+data_valid <= temp_valid;
+
 end arch_gestion_anemometre;

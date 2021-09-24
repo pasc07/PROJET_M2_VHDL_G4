@@ -22,10 +22,13 @@ begin
 -- mise en oeuvre de l'architecture
 -- OR FALLING_EDGE(clk)
   PROCESS(clk) BEGIN
+	
     IF RISING_EDGE(clk) THEN
 		  IF raz = '0' THEN
-			valid <= '1';
+			if compteur > 0 then
 			temp <= compteur;
+			valid <= '1';
+			end if;
 			compteur<=(OTHERS=>'0');
 		  ELSE
 		  IF in_freq ='1' THEN
