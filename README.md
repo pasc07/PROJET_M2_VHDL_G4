@@ -42,4 +42,10 @@ But: Générer une sortie PWM controllable en rapport cyclique et en fréquence.
 Simulation
 ![image](https://user-images.githubusercontent.com/46537418/132946648-fd1efd7e-8a6f-4b62-b53a-70ee6b6b0cb7.png)
 
-Un BE sur les barre frange pour le guidage des bateaux 
+_________________Un BE sur les barre frange pour le guidage des bateaux_________________________________
+
+Architecture de base
+![image](https://user-images.githubusercontent.com/46537418/134817267-178f8d6b-04f4-4d88-9c83-cf8a1e61f4be.png)
+
+MEF
+
