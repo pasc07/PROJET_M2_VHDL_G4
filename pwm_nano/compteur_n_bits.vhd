@@ -9,13 +9,13 @@ entity compteur_n_bits is
 port( 
 	-- Entree & sortie
 	clk,raz : in std_logic;
-	q: out std_logic_vector(15 downto 0)
+	q: out std_logic_vector(24 downto 0)
 	);
 end compteur_n_bits;
 
 architecture arch_compteur of compteur_n_bits is
 --Variables
-signal compteur: std_logic_vector(15 downto 0);
+signal compteur: std_logic_vector(24 downto 0);
 begin
 -- mise en oeuvre de l'architecture
 -- 

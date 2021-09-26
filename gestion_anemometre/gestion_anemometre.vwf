@@ -5,7 +5,7 @@ the Block Editor! File corruption is VERY likely to occur.
 */
 
 /*
-Copyright (C) 1991-2010 Altera Corporation
+Copyright (C) 1991-2009 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -293,22 +293,51 @@ TRANSITION_LIST("in_freq_anemometre")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 41;
-			LEVEL 0 FOR 12.5;
-			LEVEL 1 FOR 12.5;
+			REPEAT = 5;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
 		}
-		LEVEL 0 FOR 12.5;
-		LEVEL 1 FOR 2.5;
-		LEVEL 0 FOR 80.0;
-		LEVEL 1 FOR 80.0;
-		LEVEL 0 FOR 12.5;
-		LEVEL 1 FOR 12.5;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 120.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 40.0;
 		NODE
 		{
-			REPEAT = 151;
-			LEVEL 0 FOR 12.5;
-			LEVEL 1 FOR 12.5;
+			REPEAT = 2;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
 		}
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 280.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 40.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+		}
+		LEVEL 0 FOR 22.904;
+		LEVEL 1 FOR 159.834;
+		LEVEL 0 FOR 17.262;
+		LEVEL 1 FOR 40.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+		}
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 120.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 40.0;
+		NODE
+		{
+			REPEAT = 37;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+		}
+		LEVEL 0 FOR 40.0;
 	}
 }
 

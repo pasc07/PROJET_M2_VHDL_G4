@@ -5,7 +5,7 @@ use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 entity comparateur is
-port(   A,B  :      in  std_logic_vector(15 downto 0);
+port(   A,B  :      in  std_logic_vector(24 downto 0);
     egal :      out     std_logic);
 end comparateur;
  

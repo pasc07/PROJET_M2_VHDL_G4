@@ -21,11 +21,11 @@ begin
 -- Entree: clk_50 
 -- Sortie :clk_1Hz
 -- DIVISION PAR (25 000 000 - 1) DE L'HORLOGE de 50 MHZ
--- Exemple soit f0 = 50 000 000Hz soit T0 = 20ns, 
+-- Exemple soit f0 = 50 000 000Hz soit T0 = 20ns,
 -- pour avoir f1 = 12 500 000 Hz soit T1 = 4x20ns = 80ns
 -- On compte les fronts montant count <= count +1 = [0,1,2,3] soit 4 periodes (division par 4)
 -- ie quand count = 3 on a 4x20 ns et 
--- Etant donnee que la sortie clk_1Hz est alterné, pour avoir T1 = 1x80ns faut alterner 2 fois
+-- Etant donnee que la sortie clk_1Hz est alterne, pour avoir T1 = 1x80ns faut alterner 2 fois
 -- quand count = 1 (division par 2) ie a la moitie
 
 -- Ainsi pour avoir 1Hz a partir de 50 MHz il diviser par 50 000 000 soit count
@@ -39,12 +39,10 @@ if reset = '1' then
 	clk_1Hz_interne <= '0';
 	count <= (others => '0');
 elsif rising_edge(clk_50MHz) then
-	count <= count + X"1";
-	if count >= X"9" then --2FAF07F or 17D783F
+	count <= count + 1;
+	if count >= X"17BF19F"then --2FAF07F or 17D783F  17A6AFF 17BF19F
 		count <= (others => '0');
 		clk_1Hz_interne <= not clk_1Hz_interne;
-	--else
-		--count <= count + 1;
 	end if;
 end if;
 end process;

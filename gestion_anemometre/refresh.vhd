@@ -4,16 +4,16 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
-entity divFreq is
+entity refresh is
 
 port( 
 	clk_50MHz: in std_logic;
 	reset : in std_logic;
 	-- sortie
 	clk_1Hz: out std_logic );
-end divFreq;
+end refresh;
 
-architecture arch_divFreq of divFreq is
+architecture arch_refresh of refresh is
 signal count: std_logic_vector(25 downto 0);
 signal clk_1Hz_interne : std_logic;
 begin
@@ -40,7 +40,7 @@ if reset = '1' then
 	count <= (others => '0');
 elsif rising_edge(clk_50MHz) then
 	count <= count + X"1";
-	if count >= X"9" then --2FAF07F or 17D783F
+	if count >= X"17D783F" then --2FAF07F or 17D783F
 		count <= (others => '0');
 		clk_1Hz_interne <= not clk_1Hz_interne;
 	--else
@@ -49,4 +49,4 @@ elsif rising_edge(clk_50MHz) then
 end if;
 end process;
 clk_1Hz <= clk_1Hz_interne;
-end arch_divFreq;
+end arch_refresh;
