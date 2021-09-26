@@ -48,4 +48,10 @@ Architecture de base
 ![image](https://user-images.githubusercontent.com/46537418/134817267-178f8d6b-04f4-4d88-9c83-cf8a1e61f4be.png)
 
 MEF
+![image](https://user-images.githubusercontent.com/46537418/134823382-213ff587-7c0e-4c8e-9ba7-93875efde887.png)
+
+
+Architecture de complète 
+![image](https://user-images.githubusercontent.com/46537418/134823412-3168e59f-e2ac-48ef-83d2-4d947a5e63cc.png)
+
 
