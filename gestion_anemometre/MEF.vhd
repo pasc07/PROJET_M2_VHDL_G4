@@ -17,8 +17,8 @@ end MEF;
 architecture arch_MEF of MEF is
 --Entree
 type ETAT is (monocoup,mode_continu, acquisition,maj_data_valid);
-signal etat_present : ETAT;
-signal etat_suivant : ETAT;
+signal etat_present : ETAT :=monocoup;
+signal etat_suivant : ETAT :=monocoup;
 
 begin
 

@@ -26,6 +26,8 @@ begin
 	if rising_edge(clk) then
 		if dispo = '1' then
 			temp<=out_compteur;
+		else
+		temp <=temp;
 		end if;
     end if;
   END PROCESS;
