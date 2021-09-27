@@ -44,14 +44,16 @@ Simulation
 
 _________________Un BE sur les barre frange pour le guidage des bateaux_________________________________
 
-Architecture de base
+**Architecture de base de anémomètre**
+Il s'agit de concevoir un circuit permettant de mesurer la frequence issue d'un capteur [0-250Hz] => [0-250km/h]
 ![image](https://user-images.githubusercontent.com/46537418/134817267-178f8d6b-04f4-4d88-9c83-cf8a1e61f4be.png)
 
 MEF
-![image](https://user-images.githubusercontent.com/46537418/134823382-213ff587-7c0e-4c8e-9ba7-93875efde887.png)
+![image](https://user-images.githubusercontent.com/46537418/134995638-e2a2aeaa-fa45-4418-8f8c-6370d85f9cee.png)
 
 
 Architecture de complète 
-![image](https://user-images.githubusercontent.com/46537418/134823412-3168e59f-e2ac-48ef-83d2-4d947a5e63cc.png)
+![image](https://user-images.githubusercontent.com/46537418/134995556-4ae9e0b8-4ca4-45bd-949c-a10aa0a9b6d3.png)
+
 
 
