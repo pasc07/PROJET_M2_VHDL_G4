@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="TP_sopc" kind="system" version="11.0" fabric="SOPC">
  <!-- Format version 11.0sp1 208 (Future versions may contain additional information.) -->
- <!-- 2021.09.28.11:28:03 -->
+ <!-- 2021.09.28.11:39:44 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.Ensemble$EClockAdapter</type>
@@ -85,7 +85,7 @@
  </parameter>
  <parameter name="systemHash">
   <type>long</type>
-  <value>-8534874824</value>
+  <value>-6459618524</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -93,7 +93,7 @@
  </parameter>
  <parameter name="timeStamp">
   <type>long</type>
-  <value>1632821280355</value>
+  <value>1632821980659</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -512,15 +512,15 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.EXCEPTION_ADDR</name>
-   <value>0x200020</value>
+   <value>0x8020</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.RESET_ADDR</name>
-   <value>0x200000</value>
+   <value>0x8000</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.BREAK_ADDR</name>
-   <value>0x400820</value>
+   <value>0x10820</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.HAS_DEBUG_STUB</name>
@@ -552,11 +552,11 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.INST_ADDR_WIDTH</name>
-   <value>23</value>
+   <value>17</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_ADDR_WIDTH</name>
-   <value>23</value>
+   <value>17</value>
   </assignment>
   <parameter name="userDefinedSettings">
    <type>java.lang.String</type>
@@ -1104,7 +1104,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x200000' end='0x23A980' /><slave name='cpu_0.jtag_debug_module' start='0x400800' end='0x401000' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x8000' end='0xCE20' /><slave name='cpu_0.jtag_debug_module' start='0x10800' end='0x11000' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1112,7 +1112,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instAddrWidth">
    <type>int</type>
-   <value>23</value>
+   <value>17</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1296,7 +1296,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x200000' end='0x23A980' /><slave name='cpu_0.jtag_debug_module' start='0x400800' end='0x401000' /><slave name='boutons.s1' start='0x401000' end='0x401010' /><slave name='led.s1' start='0x401010' end='0x401020' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x401020' end='0x401028' /><slave name='sysid_0.control_slave' start='0x401028' end='0x401030' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x8000' end='0xCE20' /><slave name='cpu_0.jtag_debug_module' start='0x10800' end='0x11000' /><slave name='boutons.s1' start='0x11000' end='0x11010' /><slave name='led.s1' start='0x11010' end='0x11020' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x11020' end='0x11028' /><slave name='sysid_0.control_slave' start='0x11028' end='0x11030' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1304,7 +1304,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataAddrWidth">
    <type>int</type>
-   <value>23</value>
+   <value>17</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1798,7 +1798,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>i_address</name>
     <direction>Output</direction>
-    <width>23</width>
+    <width>17</width>
     <role>address</role>
    </port>
    <port>
@@ -1830,7 +1830,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>cpu_0</moduleName>
     <slaveName>jtag_debug_module</slaveName>
     <name>cpu_0.jtag_debug_module</name>
-    <baseAddress>4196352</baseAddress>
+    <baseAddress>67584</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -1838,8 +1838,8 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>onchip_memory2_0</moduleName>
     <slaveName>s1</slaveName>
     <name>onchip_memory2_0.s1</name>
-    <baseAddress>2097152</baseAddress>
-    <span>240000</span>
+    <baseAddress>32768</baseAddress>
+    <span>20000</span>
    </memoryBlock>
   </interface>
   <interface name="data_master" kind="avalon_master" version="11.0">
@@ -2099,7 +2099,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>d_address</name>
     <direction>Output</direction>
-    <width>23</width>
+    <width>17</width>
     <role>address</role>
    </port>
    <port>
@@ -2155,7 +2155,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>cpu_0</moduleName>
     <slaveName>jtag_debug_module</slaveName>
     <name>cpu_0.jtag_debug_module</name>
-    <baseAddress>4196352</baseAddress>
+    <baseAddress>67584</baseAddress>
     <span>2048</span>
    </memoryBlock>
    <memoryBlock>
@@ -2163,15 +2163,15 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>onchip_memory2_0</moduleName>
     <slaveName>s1</slaveName>
     <name>onchip_memory2_0.s1</name>
-    <baseAddress>2097152</baseAddress>
-    <span>240000</span>
+    <baseAddress>32768</baseAddress>
+    <span>20000</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
     <moduleName>boutons</moduleName>
     <slaveName>s1</slaveName>
     <name>boutons.s1</name>
-    <baseAddress>4198400</baseAddress>
+    <baseAddress>69632</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -2179,7 +2179,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>led</moduleName>
     <slaveName>s1</slaveName>
     <name>led.s1</name>
-    <baseAddress>4198416</baseAddress>
+    <baseAddress>69648</baseAddress>
     <span>16</span>
    </memoryBlock>
    <memoryBlock>
@@ -2187,7 +2187,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>jtag_uart_0</moduleName>
     <slaveName>avalon_jtag_slave</slaveName>
     <name>jtag_uart_0.avalon_jtag_slave</name>
-    <baseAddress>4198432</baseAddress>
+    <baseAddress>69664</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -2195,7 +2195,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>sysid_0</moduleName>
     <slaveName>control_slave</slaveName>
     <name>sysid_0.control_slave</name>
-    <baseAddress>4198440</baseAddress>
+    <baseAddress>69672</baseAddress>
     <span>8</span>
    </memoryBlock>
   </interface>
@@ -2830,7 +2830,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SIZE_VALUE</name>
-   <value>240000u</value>
+   <value>20000u</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SIZE_MULTIPLE</name>
@@ -2970,7 +2970,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="memorySize">
    <type>long</type>
-   <value>240000</value>
+   <value>20000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -3131,7 +3131,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>long</type>
-    <value>240000</value>
+    <value>20000</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -3211,7 +3211,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="explicitAddressSpan">
     <type>long</type>
-    <value>240000</value>
+    <value>20000</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -3414,7 +3414,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>16</width>
+    <width>13</width>
     <role>address</role>
    </port>
    <port>
@@ -5439,7 +5439,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1632821280u</value>
+   <value>1632821981u</value>
   </assignment>
   <parameter name="id">
    <type>long</type>
@@ -5451,7 +5451,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>long</type>
-   <value>1632821280</value>
+   <value>1632821981</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -5938,7 +5938,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>long</type>
-   <value>0x00400800</value>
+   <value>0x00010800</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -5981,7 +5981,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>long</type>
-   <value>0x00400800</value>
+   <value>0x00010800</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6051,7 +6051,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>long</type>
-   <value>0x00200000</value>
+   <value>0x8000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6094,7 +6094,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>long</type>
-   <value>0x00200000</value>
+   <value>0x8000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6164,7 +6164,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>long</type>
-   <value>0x00401000</value>
+   <value>0x00011000</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6234,7 +6234,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>long</type>
-   <value>0x00401010</value>
+   <value>0x00011010</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6304,7 +6304,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>long</type>
-   <value>0x00401020</value>
+   <value>0x00011020</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -6409,7 +6409,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>long</type>
-   <value>0x00401028</value>
+   <value>0x00011028</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>

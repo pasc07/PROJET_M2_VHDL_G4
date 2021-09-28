@@ -33,7 +33,7 @@ entity boutons_s1_arbitrator is
               -- inputs:
                  signal boutons_s1_readdata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
                  signal clk : IN STD_LOGIC;
-                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_data_master_read : IN STD_LOGIC;
                  signal cpu_0_data_master_write : IN STD_LOGIC;
                  signal reset_n : IN STD_LOGIC;
@@ -87,7 +87,7 @@ architecture europa of boutons_s1_arbitrator is
                 signal internal_cpu_0_data_master_granted_boutons_s1 :  STD_LOGIC;
                 signal internal_cpu_0_data_master_qualified_request_boutons_s1 :  STD_LOGIC;
                 signal internal_cpu_0_data_master_requests_boutons_s1 :  STD_LOGIC;
-                signal shifted_address_to_boutons_s1_from_cpu_0_data_master :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal shifted_address_to_boutons_s1_from_cpu_0_data_master :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal wait_for_boutons_s1_counter :  STD_LOGIC;
 
 begin
@@ -105,7 +105,7 @@ begin
   boutons_s1_begins_xfer <= NOT d1_reasons_to_wait AND (internal_cpu_0_data_master_qualified_request_boutons_s1);
   --assign boutons_s1_readdata_from_sa = boutons_s1_readdata so that symbol knows where to group signals which may go to master only, which is an e_assign
   boutons_s1_readdata_from_sa <= boutons_s1_readdata;
-  internal_cpu_0_data_master_requests_boutons_s1 <= ((to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(22 DOWNTO 4) & std_logic_vector'("0000")) = std_logic_vector'("10000000001000000000000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write)))) AND cpu_0_data_master_read;
+  internal_cpu_0_data_master_requests_boutons_s1 <= ((to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(16 DOWNTO 4) & std_logic_vector'("0000")) = std_logic_vector'("10001000000000000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write)))) AND cpu_0_data_master_read;
   --boutons_s1_arb_share_counter set values, which is an e_mux
   boutons_s1_arb_share_set_values <= std_logic'('1');
   --boutons_s1_non_bursting_master_requests mux, which is an e_mux
@@ -260,14 +260,14 @@ entity cpu_0_jtag_debug_module_arbitrator is
         port (
               -- inputs:
                  signal clk : IN STD_LOGIC;
-                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_data_master_byteenable : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
                  signal cpu_0_data_master_debugaccess : IN STD_LOGIC;
                  signal cpu_0_data_master_read : IN STD_LOGIC;
                  signal cpu_0_data_master_waitrequest : IN STD_LOGIC;
                  signal cpu_0_data_master_write : IN STD_LOGIC;
                  signal cpu_0_data_master_writedata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-                 signal cpu_0_instruction_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_instruction_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_instruction_master_read : IN STD_LOGIC;
                  signal cpu_0_jtag_debug_module_readdata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
                  signal cpu_0_jtag_debug_module_resetrequest : IN STD_LOGIC;
@@ -348,8 +348,8 @@ architecture europa of cpu_0_jtag_debug_module_arbitrator is
                 signal internal_cpu_0_instruction_master_requests_cpu_0_jtag_debug_module :  STD_LOGIC;
                 signal last_cycle_cpu_0_data_master_granted_slave_cpu_0_jtag_debug_module :  STD_LOGIC;
                 signal last_cycle_cpu_0_instruction_master_granted_slave_cpu_0_jtag_debug_module :  STD_LOGIC;
-                signal shifted_address_to_cpu_0_jtag_debug_module_from_cpu_0_data_master :  STD_LOGIC_VECTOR (22 DOWNTO 0);
-                signal shifted_address_to_cpu_0_jtag_debug_module_from_cpu_0_instruction_master :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal shifted_address_to_cpu_0_jtag_debug_module_from_cpu_0_data_master :  STD_LOGIC_VECTOR (16 DOWNTO 0);
+                signal shifted_address_to_cpu_0_jtag_debug_module_from_cpu_0_instruction_master :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal wait_for_cpu_0_jtag_debug_module_counter :  STD_LOGIC;
 
 begin
@@ -367,7 +367,7 @@ begin
   cpu_0_jtag_debug_module_begins_xfer <= NOT d1_reasons_to_wait AND ((internal_cpu_0_data_master_qualified_request_cpu_0_jtag_debug_module OR internal_cpu_0_instruction_master_qualified_request_cpu_0_jtag_debug_module));
   --assign cpu_0_jtag_debug_module_readdata_from_sa = cpu_0_jtag_debug_module_readdata so that symbol knows where to group signals which may go to master only, which is an e_assign
   cpu_0_jtag_debug_module_readdata_from_sa <= cpu_0_jtag_debug_module_readdata;
-  internal_cpu_0_data_master_requests_cpu_0_jtag_debug_module <= to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(22 DOWNTO 11) & std_logic_vector'("00000000000")) = std_logic_vector'("10000000000100000000000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write));
+  internal_cpu_0_data_master_requests_cpu_0_jtag_debug_module <= to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(16 DOWNTO 11) & std_logic_vector'("00000000000")) = std_logic_vector'("10000100000000000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write));
   --cpu_0_jtag_debug_module_arb_share_counter set values, which is an e_mux
   cpu_0_jtag_debug_module_arb_share_set_values <= std_logic'('1');
   --cpu_0_jtag_debug_module_non_bursting_master_requests mux, which is an e_mux
@@ -438,7 +438,7 @@ begin
   internal_cpu_0_data_master_qualified_request_cpu_0_jtag_debug_module <= internal_cpu_0_data_master_requests_cpu_0_jtag_debug_module AND NOT (((((NOT cpu_0_data_master_waitrequest) AND cpu_0_data_master_write)) OR cpu_0_instruction_master_arbiterlock));
   --cpu_0_jtag_debug_module_writedata mux, which is an e_mux
   cpu_0_jtag_debug_module_writedata <= cpu_0_data_master_writedata;
-  internal_cpu_0_instruction_master_requests_cpu_0_jtag_debug_module <= ((to_std_logic(((Std_Logic_Vector'(cpu_0_instruction_master_address_to_slave(22 DOWNTO 11) & std_logic_vector'("00000000000")) = std_logic_vector'("10000000000100000000000")))) AND (cpu_0_instruction_master_read))) AND cpu_0_instruction_master_read;
+  internal_cpu_0_instruction_master_requests_cpu_0_jtag_debug_module <= ((to_std_logic(((Std_Logic_Vector'(cpu_0_instruction_master_address_to_slave(16 DOWNTO 11) & std_logic_vector'("00000000000")) = std_logic_vector'("10000100000000000")))) AND (cpu_0_instruction_master_read))) AND cpu_0_instruction_master_read;
   --cpu_0/data_master granted cpu_0/jtag_debug_module last time, which is an e_register
   process (clk, reset_n)
   begin
@@ -643,7 +643,7 @@ entity cpu_0_data_master_arbitrator is
               -- inputs:
                  signal boutons_s1_readdata_from_sa : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
                  signal clk : IN STD_LOGIC;
-                 signal cpu_0_data_master_address : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_data_master_address : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_data_master_granted_boutons_s1 : IN STD_LOGIC;
                  signal cpu_0_data_master_granted_cpu_0_jtag_debug_module : IN STD_LOGIC;
                  signal cpu_0_data_master_granted_jtag_uart_0_avalon_jtag_slave : IN STD_LOGIC;
@@ -687,7 +687,7 @@ entity cpu_0_data_master_arbitrator is
                  signal sysid_0_control_slave_readdata_from_sa : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
 
               -- outputs:
-                 signal cpu_0_data_master_address_to_slave : OUT STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_data_master_address_to_slave : OUT STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_data_master_irq : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
                  signal cpu_0_data_master_readdata : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
                  signal cpu_0_data_master_waitrequest : OUT STD_LOGIC
@@ -697,7 +697,7 @@ end entity cpu_0_data_master_arbitrator;
 
 architecture europa of cpu_0_data_master_arbitrator is
                 signal cpu_0_data_master_run :  STD_LOGIC;
-                signal internal_cpu_0_data_master_address_to_slave :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal internal_cpu_0_data_master_address_to_slave :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal internal_cpu_0_data_master_waitrequest :  STD_LOGIC;
                 signal p1_registered_cpu_0_data_master_readdata :  STD_LOGIC_VECTOR (31 DOWNTO 0);
                 signal r_0 :  STD_LOGIC;
@@ -713,7 +713,7 @@ begin
   --r_1 master_run cascaded wait assignment, which is an e_assign
   r_1 <= Vector_To_Std_Logic(((((((std_logic_vector'("0000000000000000000000000000000") & (A_TOSTDLOGICVECTOR((NOT cpu_0_data_master_qualified_request_onchip_memory2_0_s1 OR NOT ((cpu_0_data_master_read OR cpu_0_data_master_write)))))) OR ((std_logic_vector'("00000000000000000000000000000001") AND (std_logic_vector'("0000000000000000000000000000000") & (A_TOSTDLOGICVECTOR(((cpu_0_data_master_read OR cpu_0_data_master_write))))))))) AND std_logic_vector'("00000000000000000000000000000001")) AND (((std_logic_vector'("0000000000000000000000000000000") & (A_TOSTDLOGICVECTOR((NOT cpu_0_data_master_qualified_request_sysid_0_control_slave OR NOT cpu_0_data_master_read)))) OR (((std_logic_vector'("00000000000000000000000000000001") AND std_logic_vector'("00000000000000000000000000000001")) AND (std_logic_vector'("0000000000000000000000000000000") & (A_TOSTDLOGICVECTOR(cpu_0_data_master_read)))))))) AND (((std_logic_vector'("0000000000000000000000000000000") & (A_TOSTDLOGICVECTOR((NOT cpu_0_data_master_qualified_request_sysid_0_control_slave OR NOT cpu_0_data_master_write)))) OR ((std_logic_vector'("00000000000000000000000000000001") AND (std_logic_vector'("0000000000000000000000000000000") & (A_TOSTDLOGICVECTOR(cpu_0_data_master_write)))))))));
   --optimize select-logic by passing only those address bits which matter.
-  internal_cpu_0_data_master_address_to_slave <= Std_Logic_Vector'(cpu_0_data_master_address(22 DOWNTO 21) & std_logic_vector'("000") & cpu_0_data_master_address(17 DOWNTO 0));
+  internal_cpu_0_data_master_address_to_slave <= cpu_0_data_master_address(16 DOWNTO 0);
   --cpu_0/data_master readdata mux, which is an e_mux
   cpu_0_data_master_readdata <= ((((((A_REP(NOT cpu_0_data_master_requests_boutons_s1, 32) OR boutons_s1_readdata_from_sa)) AND ((A_REP(NOT cpu_0_data_master_requests_cpu_0_jtag_debug_module, 32) OR cpu_0_jtag_debug_module_readdata_from_sa))) AND ((A_REP(NOT cpu_0_data_master_requests_jtag_uart_0_avalon_jtag_slave, 32) OR registered_cpu_0_data_master_readdata))) AND ((A_REP(NOT cpu_0_data_master_requests_led_s1, 32) OR led_s1_readdata_from_sa))) AND ((A_REP(NOT cpu_0_data_master_requests_onchip_memory2_0_s1, 32) OR onchip_memory2_0_s1_readdata_from_sa))) AND ((A_REP(NOT cpu_0_data_master_requests_sysid_0_control_slave, 32) OR sysid_0_control_slave_readdata_from_sa));
   --actual waitrequest port, which is an e_register
@@ -770,7 +770,7 @@ entity cpu_0_instruction_master_arbitrator is
         port (
               -- inputs:
                  signal clk : IN STD_LOGIC;
-                 signal cpu_0_instruction_master_address : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_instruction_master_address : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_instruction_master_granted_cpu_0_jtag_debug_module : IN STD_LOGIC;
                  signal cpu_0_instruction_master_granted_onchip_memory2_0_s1 : IN STD_LOGIC;
                  signal cpu_0_instruction_master_qualified_request_cpu_0_jtag_debug_module : IN STD_LOGIC;
@@ -787,7 +787,7 @@ entity cpu_0_instruction_master_arbitrator is
                  signal reset_n : IN STD_LOGIC;
 
               -- outputs:
-                 signal cpu_0_instruction_master_address_to_slave : OUT STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_instruction_master_address_to_slave : OUT STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_instruction_master_readdata : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
                  signal cpu_0_instruction_master_waitrequest : OUT STD_LOGIC
               );
@@ -796,10 +796,10 @@ end entity cpu_0_instruction_master_arbitrator;
 
 architecture europa of cpu_0_instruction_master_arbitrator is
                 signal active_and_waiting_last_time :  STD_LOGIC;
-                signal cpu_0_instruction_master_address_last_time :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal cpu_0_instruction_master_address_last_time :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal cpu_0_instruction_master_read_last_time :  STD_LOGIC;
                 signal cpu_0_instruction_master_run :  STD_LOGIC;
-                signal internal_cpu_0_instruction_master_address_to_slave :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal internal_cpu_0_instruction_master_address_to_slave :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal internal_cpu_0_instruction_master_waitrequest :  STD_LOGIC;
                 signal r_0 :  STD_LOGIC;
                 signal r_1 :  STD_LOGIC;
@@ -813,7 +813,7 @@ begin
   --r_1 master_run cascaded wait assignment, which is an e_assign
   r_1 <= (NOT cpu_0_instruction_master_qualified_request_onchip_memory2_0_s1 OR NOT cpu_0_instruction_master_read) OR ((cpu_0_instruction_master_read_data_valid_onchip_memory2_0_s1 AND cpu_0_instruction_master_read));
   --optimize select-logic by passing only those address bits which matter.
-  internal_cpu_0_instruction_master_address_to_slave <= Std_Logic_Vector'(cpu_0_instruction_master_address(22 DOWNTO 21) & std_logic_vector'("000") & cpu_0_instruction_master_address(17 DOWNTO 0));
+  internal_cpu_0_instruction_master_address_to_slave <= cpu_0_instruction_master_address(16 DOWNTO 0);
   --cpu_0/instruction_master readdata mux, which is an e_mux
   cpu_0_instruction_master_readdata <= ((A_REP(NOT cpu_0_instruction_master_requests_cpu_0_jtag_debug_module, 32) OR cpu_0_jtag_debug_module_readdata_from_sa)) AND ((A_REP(NOT cpu_0_instruction_master_requests_onchip_memory2_0_s1, 32) OR onchip_memory2_0_s1_readdata_from_sa));
   --actual waitrequest port, which is an e_assign
@@ -827,7 +827,7 @@ begin
     process (clk, reset_n)
     begin
       if reset_n = '0' then
-        cpu_0_instruction_master_address_last_time <= std_logic_vector'("00000000000000000000000");
+        cpu_0_instruction_master_address_last_time <= std_logic_vector'("00000000000000000");
       elsif clk'event and clk = '1' then
         cpu_0_instruction_master_address_last_time <= cpu_0_instruction_master_address;
       end if;
@@ -912,7 +912,7 @@ entity jtag_uart_0_avalon_jtag_slave_arbitrator is
         port (
               -- inputs:
                  signal clk : IN STD_LOGIC;
-                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_data_master_read : IN STD_LOGIC;
                  signal cpu_0_data_master_waitrequest : IN STD_LOGIC;
                  signal cpu_0_data_master_write : IN STD_LOGIC;
@@ -982,7 +982,7 @@ architecture europa of jtag_uart_0_avalon_jtag_slave_arbitrator is
                 signal jtag_uart_0_avalon_jtag_slave_unreg_firsttransfer :  STD_LOGIC;
                 signal jtag_uart_0_avalon_jtag_slave_waits_for_read :  STD_LOGIC;
                 signal jtag_uart_0_avalon_jtag_slave_waits_for_write :  STD_LOGIC;
-                signal shifted_address_to_jtag_uart_0_avalon_jtag_slave_from_cpu_0_data_master :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal shifted_address_to_jtag_uart_0_avalon_jtag_slave_from_cpu_0_data_master :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal wait_for_jtag_uart_0_avalon_jtag_slave_counter :  STD_LOGIC;
 
 begin
@@ -1000,7 +1000,7 @@ begin
   jtag_uart_0_avalon_jtag_slave_begins_xfer <= NOT d1_reasons_to_wait AND (internal_cpu_0_data_master_qualified_request_jtag_uart_0_avalon_jtag_slave);
   --assign jtag_uart_0_avalon_jtag_slave_readdata_from_sa = jtag_uart_0_avalon_jtag_slave_readdata so that symbol knows where to group signals which may go to master only, which is an e_assign
   jtag_uart_0_avalon_jtag_slave_readdata_from_sa <= jtag_uart_0_avalon_jtag_slave_readdata;
-  internal_cpu_0_data_master_requests_jtag_uart_0_avalon_jtag_slave <= to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(22 DOWNTO 3) & std_logic_vector'("000")) = std_logic_vector'("10000000001000000100000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write));
+  internal_cpu_0_data_master_requests_jtag_uart_0_avalon_jtag_slave <= to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(16 DOWNTO 3) & std_logic_vector'("000")) = std_logic_vector'("10001000000100000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write));
   --assign jtag_uart_0_avalon_jtag_slave_dataavailable_from_sa = jtag_uart_0_avalon_jtag_slave_dataavailable so that symbol knows where to group signals which may go to master only, which is an e_assign
   jtag_uart_0_avalon_jtag_slave_dataavailable_from_sa <= jtag_uart_0_avalon_jtag_slave_dataavailable;
   --assign jtag_uart_0_avalon_jtag_slave_readyfordata_from_sa = jtag_uart_0_avalon_jtag_slave_readyfordata so that symbol knows where to group signals which may go to master only, which is an e_assign
@@ -1169,7 +1169,7 @@ entity led_s1_arbitrator is
         port (
               -- inputs:
                  signal clk : IN STD_LOGIC;
-                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_data_master_read : IN STD_LOGIC;
                  signal cpu_0_data_master_waitrequest : IN STD_LOGIC;
                  signal cpu_0_data_master_write : IN STD_LOGIC;
@@ -1229,7 +1229,7 @@ architecture europa of led_s1_arbitrator is
                 signal led_s1_unreg_firsttransfer :  STD_LOGIC;
                 signal led_s1_waits_for_read :  STD_LOGIC;
                 signal led_s1_waits_for_write :  STD_LOGIC;
-                signal shifted_address_to_led_s1_from_cpu_0_data_master :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal shifted_address_to_led_s1_from_cpu_0_data_master :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal wait_for_led_s1_counter :  STD_LOGIC;
 
 begin
@@ -1247,7 +1247,7 @@ begin
   led_s1_begins_xfer <= NOT d1_reasons_to_wait AND (internal_cpu_0_data_master_qualified_request_led_s1);
   --assign led_s1_readdata_from_sa = led_s1_readdata so that symbol knows where to group signals which may go to master only, which is an e_assign
   led_s1_readdata_from_sa <= led_s1_readdata;
-  internal_cpu_0_data_master_requests_led_s1 <= to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(22 DOWNTO 4) & std_logic_vector'("0000")) = std_logic_vector'("10000000001000000010000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write));
+  internal_cpu_0_data_master_requests_led_s1 <= to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(16 DOWNTO 4) & std_logic_vector'("0000")) = std_logic_vector'("10001000000010000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write));
   --led_s1_arb_share_counter set values, which is an e_mux
   led_s1_arb_share_set_values <= std_logic'('1');
   --led_s1_non_bursting_master_requests mux, which is an e_mux
@@ -1407,13 +1407,13 @@ entity onchip_memory2_0_s1_arbitrator is
         port (
               -- inputs:
                  signal clk : IN STD_LOGIC;
-                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_data_master_byteenable : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
                  signal cpu_0_data_master_read : IN STD_LOGIC;
                  signal cpu_0_data_master_waitrequest : IN STD_LOGIC;
                  signal cpu_0_data_master_write : IN STD_LOGIC;
                  signal cpu_0_data_master_writedata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-                 signal cpu_0_instruction_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_instruction_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_instruction_master_read : IN STD_LOGIC;
                  signal onchip_memory2_0_s1_readdata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
                  signal reset_n : IN STD_LOGIC;
@@ -1428,7 +1428,7 @@ entity onchip_memory2_0_s1_arbitrator is
                  signal cpu_0_instruction_master_read_data_valid_onchip_memory2_0_s1 : OUT STD_LOGIC;
                  signal cpu_0_instruction_master_requests_onchip_memory2_0_s1 : OUT STD_LOGIC;
                  signal d1_onchip_memory2_0_s1_end_xfer : OUT STD_LOGIC;
-                 signal onchip_memory2_0_s1_address : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+                 signal onchip_memory2_0_s1_address : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);
                  signal onchip_memory2_0_s1_byteenable : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
                  signal onchip_memory2_0_s1_chipselect : OUT STD_LOGIC;
                  signal onchip_memory2_0_s1_clken : OUT STD_LOGIC;
@@ -1498,8 +1498,8 @@ architecture europa of onchip_memory2_0_s1_arbitrator is
                 signal onchip_memory2_0_s1_waits_for_write :  STD_LOGIC;
                 signal p1_cpu_0_data_master_read_data_valid_onchip_memory2_0_s1_shift_register :  STD_LOGIC;
                 signal p1_cpu_0_instruction_master_read_data_valid_onchip_memory2_0_s1_shift_register :  STD_LOGIC;
-                signal shifted_address_to_onchip_memory2_0_s1_from_cpu_0_data_master :  STD_LOGIC_VECTOR (22 DOWNTO 0);
-                signal shifted_address_to_onchip_memory2_0_s1_from_cpu_0_instruction_master :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal shifted_address_to_onchip_memory2_0_s1_from_cpu_0_data_master :  STD_LOGIC_VECTOR (16 DOWNTO 0);
+                signal shifted_address_to_onchip_memory2_0_s1_from_cpu_0_instruction_master :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal wait_for_onchip_memory2_0_s1_counter :  STD_LOGIC;
 
 begin
@@ -1517,7 +1517,7 @@ begin
   onchip_memory2_0_s1_begins_xfer <= NOT d1_reasons_to_wait AND ((internal_cpu_0_data_master_qualified_request_onchip_memory2_0_s1 OR internal_cpu_0_instruction_master_qualified_request_onchip_memory2_0_s1));
   --assign onchip_memory2_0_s1_readdata_from_sa = onchip_memory2_0_s1_readdata so that symbol knows where to group signals which may go to master only, which is an e_assign
   onchip_memory2_0_s1_readdata_from_sa <= onchip_memory2_0_s1_readdata;
-  internal_cpu_0_data_master_requests_onchip_memory2_0_s1 <= to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(22 DOWNTO 18) & std_logic_vector'("000000000000000000")) = std_logic_vector'("01000000000000000000000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write));
+  internal_cpu_0_data_master_requests_onchip_memory2_0_s1 <= to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(16 DOWNTO 15) & std_logic_vector'("000000000000000")) = std_logic_vector'("01000000000000000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write));
   --registered rdv signal_name registered_cpu_0_data_master_read_data_valid_onchip_memory2_0_s1 assignment, which is an e_assign
   registered_cpu_0_data_master_read_data_valid_onchip_memory2_0_s1 <= cpu_0_data_master_read_data_valid_onchip_memory2_0_s1_shift_register_in;
   --onchip_memory2_0_s1_arb_share_counter set values, which is an e_mux
@@ -1609,7 +1609,7 @@ begin
   onchip_memory2_0_s1_writedata <= cpu_0_data_master_writedata;
   --mux onchip_memory2_0_s1_clken, which is an e_mux
   onchip_memory2_0_s1_clken <= std_logic'('1');
-  internal_cpu_0_instruction_master_requests_onchip_memory2_0_s1 <= ((to_std_logic(((Std_Logic_Vector'(cpu_0_instruction_master_address_to_slave(22 DOWNTO 18) & std_logic_vector'("000000000000000000")) = std_logic_vector'("01000000000000000000000")))) AND (cpu_0_instruction_master_read))) AND cpu_0_instruction_master_read;
+  internal_cpu_0_instruction_master_requests_onchip_memory2_0_s1 <= ((to_std_logic(((Std_Logic_Vector'(cpu_0_instruction_master_address_to_slave(16 DOWNTO 15) & std_logic_vector'("000000000000000")) = std_logic_vector'("01000000000000000")))) AND (cpu_0_instruction_master_read))) AND cpu_0_instruction_master_read;
   --cpu_0/data_master granted onchip_memory2_0/s1 last time, which is an e_register
   process (clk, reset_n)
   begin
@@ -1717,7 +1717,7 @@ begin
   onchip_memory2_0_s1_write <= internal_cpu_0_data_master_granted_onchip_memory2_0_s1 AND cpu_0_data_master_write;
   shifted_address_to_onchip_memory2_0_s1_from_cpu_0_data_master <= cpu_0_data_master_address_to_slave;
   --onchip_memory2_0_s1_address mux, which is an e_mux
-  onchip_memory2_0_s1_address <= A_EXT (A_WE_StdLogicVector((std_logic'((internal_cpu_0_data_master_granted_onchip_memory2_0_s1)) = '1'), (A_SRL(shifted_address_to_onchip_memory2_0_s1_from_cpu_0_data_master,std_logic_vector'("00000000000000000000000000000010"))), (A_SRL(shifted_address_to_onchip_memory2_0_s1_from_cpu_0_instruction_master,std_logic_vector'("00000000000000000000000000000010")))), 16);
+  onchip_memory2_0_s1_address <= A_EXT (A_WE_StdLogicVector((std_logic'((internal_cpu_0_data_master_granted_onchip_memory2_0_s1)) = '1'), (A_SRL(shifted_address_to_onchip_memory2_0_s1_from_cpu_0_data_master,std_logic_vector'("00000000000000000000000000000010"))), (A_SRL(shifted_address_to_onchip_memory2_0_s1_from_cpu_0_instruction_master,std_logic_vector'("00000000000000000000000000000010")))), 13);
   shifted_address_to_onchip_memory2_0_s1_from_cpu_0_instruction_master <= cpu_0_instruction_master_address_to_slave;
   --d1_onchip_memory2_0_s1_end_xfer register, which is an e_register
   process (clk, reset_n)
@@ -1825,7 +1825,7 @@ entity sysid_0_control_slave_arbitrator is
         port (
               -- inputs:
                  signal clk : IN STD_LOGIC;
-                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                 signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                  signal cpu_0_data_master_read : IN STD_LOGIC;
                  signal cpu_0_data_master_write : IN STD_LOGIC;
                  signal reset_n : IN STD_LOGIC;
@@ -1857,7 +1857,7 @@ architecture europa of sysid_0_control_slave_arbitrator is
                 signal internal_cpu_0_data_master_granted_sysid_0_control_slave :  STD_LOGIC;
                 signal internal_cpu_0_data_master_qualified_request_sysid_0_control_slave :  STD_LOGIC;
                 signal internal_cpu_0_data_master_requests_sysid_0_control_slave :  STD_LOGIC;
-                signal shifted_address_to_sysid_0_control_slave_from_cpu_0_data_master :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal shifted_address_to_sysid_0_control_slave_from_cpu_0_data_master :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal sysid_0_control_slave_allgrants :  STD_LOGIC;
                 signal sysid_0_control_slave_allow_new_arb_cycle :  STD_LOGIC;
                 signal sysid_0_control_slave_any_bursting_master_saved_grant :  STD_LOGIC;
@@ -1898,7 +1898,7 @@ begin
   sysid_0_control_slave_begins_xfer <= NOT d1_reasons_to_wait AND (internal_cpu_0_data_master_qualified_request_sysid_0_control_slave);
   --assign sysid_0_control_slave_readdata_from_sa = sysid_0_control_slave_readdata so that symbol knows where to group signals which may go to master only, which is an e_assign
   sysid_0_control_slave_readdata_from_sa <= sysid_0_control_slave_readdata;
-  internal_cpu_0_data_master_requests_sysid_0_control_slave <= ((to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(22 DOWNTO 3) & std_logic_vector'("000")) = std_logic_vector'("10000000001000000101000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write)))) AND cpu_0_data_master_read;
+  internal_cpu_0_data_master_requests_sysid_0_control_slave <= ((to_std_logic(((Std_Logic_Vector'(cpu_0_data_master_address_to_slave(16 DOWNTO 3) & std_logic_vector'("000")) = std_logic_vector'("10001000000101000")))) AND ((cpu_0_data_master_read OR cpu_0_data_master_write)))) AND cpu_0_data_master_read;
   --sysid_0_control_slave_arb_share_counter set values, which is an e_mux
   sysid_0_control_slave_arb_share_set_values <= std_logic'('1');
   --sysid_0_control_slave_non_bursting_master_requests mux, which is an e_mux
@@ -2125,7 +2125,7 @@ component boutons_s1_arbitrator is
                  -- inputs:
                     signal boutons_s1_readdata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
                     signal clk : IN STD_LOGIC;
-                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_data_master_read : IN STD_LOGIC;
                     signal cpu_0_data_master_write : IN STD_LOGIC;
                     signal reset_n : IN STD_LOGIC;
@@ -2159,14 +2159,14 @@ component cpu_0_jtag_debug_module_arbitrator is
            port (
                  -- inputs:
                     signal clk : IN STD_LOGIC;
-                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_data_master_byteenable : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
                     signal cpu_0_data_master_debugaccess : IN STD_LOGIC;
                     signal cpu_0_data_master_read : IN STD_LOGIC;
                     signal cpu_0_data_master_waitrequest : IN STD_LOGIC;
                     signal cpu_0_data_master_write : IN STD_LOGIC;
                     signal cpu_0_data_master_writedata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-                    signal cpu_0_instruction_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_instruction_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_instruction_master_read : IN STD_LOGIC;
                     signal cpu_0_jtag_debug_module_readdata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
                     signal cpu_0_jtag_debug_module_resetrequest : IN STD_LOGIC;
@@ -2200,7 +2200,7 @@ component cpu_0_data_master_arbitrator is
                  -- inputs:
                     signal boutons_s1_readdata_from_sa : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
                     signal clk : IN STD_LOGIC;
-                    signal cpu_0_data_master_address : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_data_master_address : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_data_master_granted_boutons_s1 : IN STD_LOGIC;
                     signal cpu_0_data_master_granted_cpu_0_jtag_debug_module : IN STD_LOGIC;
                     signal cpu_0_data_master_granted_jtag_uart_0_avalon_jtag_slave : IN STD_LOGIC;
@@ -2244,7 +2244,7 @@ component cpu_0_data_master_arbitrator is
                     signal sysid_0_control_slave_readdata_from_sa : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
 
                  -- outputs:
-                    signal cpu_0_data_master_address_to_slave : OUT STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_data_master_address_to_slave : OUT STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_data_master_irq : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
                     signal cpu_0_data_master_readdata : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
                     signal cpu_0_data_master_waitrequest : OUT STD_LOGIC
@@ -2255,7 +2255,7 @@ component cpu_0_instruction_master_arbitrator is
            port (
                  -- inputs:
                     signal clk : IN STD_LOGIC;
-                    signal cpu_0_instruction_master_address : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_instruction_master_address : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_instruction_master_granted_cpu_0_jtag_debug_module : IN STD_LOGIC;
                     signal cpu_0_instruction_master_granted_onchip_memory2_0_s1 : IN STD_LOGIC;
                     signal cpu_0_instruction_master_qualified_request_cpu_0_jtag_debug_module : IN STD_LOGIC;
@@ -2272,7 +2272,7 @@ component cpu_0_instruction_master_arbitrator is
                     signal reset_n : IN STD_LOGIC;
 
                  -- outputs:
-                    signal cpu_0_instruction_master_address_to_slave : OUT STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_instruction_master_address_to_slave : OUT STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_instruction_master_readdata : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
                     signal cpu_0_instruction_master_waitrequest : OUT STD_LOGIC
                  );
@@ -2297,12 +2297,12 @@ component cpu_0 is
                     signal reset_n : IN STD_LOGIC;
 
                  -- outputs:
-                    signal d_address : OUT STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal d_address : OUT STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal d_byteenable : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
                     signal d_read : OUT STD_LOGIC;
                     signal d_write : OUT STD_LOGIC;
                     signal d_writedata : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
-                    signal i_address : OUT STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal i_address : OUT STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal i_read : OUT STD_LOGIC;
                     signal jtag_debug_module_debugaccess_to_roms : OUT STD_LOGIC;
                     signal jtag_debug_module_readdata : OUT STD_LOGIC_VECTOR (31 DOWNTO 0);
@@ -2314,7 +2314,7 @@ component jtag_uart_0_avalon_jtag_slave_arbitrator is
            port (
                  -- inputs:
                     signal clk : IN STD_LOGIC;
-                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_data_master_read : IN STD_LOGIC;
                     signal cpu_0_data_master_waitrequest : IN STD_LOGIC;
                     signal cpu_0_data_master_write : IN STD_LOGIC;
@@ -2370,7 +2370,7 @@ component led_s1_arbitrator is
            port (
                  -- inputs:
                     signal clk : IN STD_LOGIC;
-                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_data_master_read : IN STD_LOGIC;
                     signal cpu_0_data_master_waitrequest : IN STD_LOGIC;
                     signal cpu_0_data_master_write : IN STD_LOGIC;
@@ -2413,13 +2413,13 @@ component onchip_memory2_0_s1_arbitrator is
            port (
                  -- inputs:
                     signal clk : IN STD_LOGIC;
-                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_data_master_byteenable : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
                     signal cpu_0_data_master_read : IN STD_LOGIC;
                     signal cpu_0_data_master_waitrequest : IN STD_LOGIC;
                     signal cpu_0_data_master_write : IN STD_LOGIC;
                     signal cpu_0_data_master_writedata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
-                    signal cpu_0_instruction_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_instruction_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_instruction_master_read : IN STD_LOGIC;
                     signal onchip_memory2_0_s1_readdata : IN STD_LOGIC_VECTOR (31 DOWNTO 0);
                     signal reset_n : IN STD_LOGIC;
@@ -2434,7 +2434,7 @@ component onchip_memory2_0_s1_arbitrator is
                     signal cpu_0_instruction_master_read_data_valid_onchip_memory2_0_s1 : OUT STD_LOGIC;
                     signal cpu_0_instruction_master_requests_onchip_memory2_0_s1 : OUT STD_LOGIC;
                     signal d1_onchip_memory2_0_s1_end_xfer : OUT STD_LOGIC;
-                    signal onchip_memory2_0_s1_address : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+                    signal onchip_memory2_0_s1_address : OUT STD_LOGIC_VECTOR (12 DOWNTO 0);
                     signal onchip_memory2_0_s1_byteenable : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
                     signal onchip_memory2_0_s1_chipselect : OUT STD_LOGIC;
                     signal onchip_memory2_0_s1_clken : OUT STD_LOGIC;
@@ -2449,7 +2449,7 @@ end component onchip_memory2_0_s1_arbitrator;
 component onchip_memory2_0 is 
            port (
                  -- inputs:
-                    signal address : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+                    signal address : IN STD_LOGIC_VECTOR (12 DOWNTO 0);
                     signal byteenable : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
                     signal chipselect : IN STD_LOGIC;
                     signal clk : IN STD_LOGIC;
@@ -2467,7 +2467,7 @@ component sysid_0_control_slave_arbitrator is
            port (
                  -- inputs:
                     signal clk : IN STD_LOGIC;
-                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (22 DOWNTO 0);
+                    signal cpu_0_data_master_address_to_slave : IN STD_LOGIC_VECTOR (16 DOWNTO 0);
                     signal cpu_0_data_master_read : IN STD_LOGIC;
                     signal cpu_0_data_master_write : IN STD_LOGIC;
                     signal reset_n : IN STD_LOGIC;
@@ -2514,8 +2514,8 @@ end component TP_sopc_reset_clk_0_domain_synch_module;
                 signal boutons_s1_readdata_from_sa :  STD_LOGIC_VECTOR (31 DOWNTO 0);
                 signal boutons_s1_reset_n :  STD_LOGIC;
                 signal clk_0_reset_n :  STD_LOGIC;
-                signal cpu_0_data_master_address :  STD_LOGIC_VECTOR (22 DOWNTO 0);
-                signal cpu_0_data_master_address_to_slave :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal cpu_0_data_master_address :  STD_LOGIC_VECTOR (16 DOWNTO 0);
+                signal cpu_0_data_master_address_to_slave :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal cpu_0_data_master_byteenable :  STD_LOGIC_VECTOR (3 DOWNTO 0);
                 signal cpu_0_data_master_debugaccess :  STD_LOGIC;
                 signal cpu_0_data_master_granted_boutons_s1 :  STD_LOGIC;
@@ -2548,8 +2548,8 @@ end component TP_sopc_reset_clk_0_domain_synch_module;
                 signal cpu_0_data_master_waitrequest :  STD_LOGIC;
                 signal cpu_0_data_master_write :  STD_LOGIC;
                 signal cpu_0_data_master_writedata :  STD_LOGIC_VECTOR (31 DOWNTO 0);
-                signal cpu_0_instruction_master_address :  STD_LOGIC_VECTOR (22 DOWNTO 0);
-                signal cpu_0_instruction_master_address_to_slave :  STD_LOGIC_VECTOR (22 DOWNTO 0);
+                signal cpu_0_instruction_master_address :  STD_LOGIC_VECTOR (16 DOWNTO 0);
+                signal cpu_0_instruction_master_address_to_slave :  STD_LOGIC_VECTOR (16 DOWNTO 0);
                 signal cpu_0_instruction_master_granted_cpu_0_jtag_debug_module :  STD_LOGIC;
                 signal cpu_0_instruction_master_granted_onchip_memory2_0_s1 :  STD_LOGIC;
                 signal cpu_0_instruction_master_qualified_request_cpu_0_jtag_debug_module :  STD_LOGIC;
@@ -2604,7 +2604,7 @@ end component TP_sopc_reset_clk_0_domain_synch_module;
                 signal led_s1_write_n :  STD_LOGIC;
                 signal led_s1_writedata :  STD_LOGIC_VECTOR (31 DOWNTO 0);
                 signal module_input :  STD_LOGIC;
-                signal onchip_memory2_0_s1_address :  STD_LOGIC_VECTOR (15 DOWNTO 0);
+                signal onchip_memory2_0_s1_address :  STD_LOGIC_VECTOR (12 DOWNTO 0);
                 signal onchip_memory2_0_s1_byteenable :  STD_LOGIC_VECTOR (3 DOWNTO 0);
                 signal onchip_memory2_0_s1_chipselect :  STD_LOGIC;
                 signal onchip_memory2_0_s1_clken :  STD_LOGIC;

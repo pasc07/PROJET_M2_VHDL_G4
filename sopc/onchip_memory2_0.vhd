@@ -35,7 +35,7 @@ entity onchip_memory2_0 is
                  );
         port (
               -- inputs:
-                 signal address : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+                 signal address : IN STD_LOGIC_VECTOR (12 DOWNTO 0);
                  signal byteenable : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
                  signal chipselect : IN STD_LOGIC;
                  signal clk : IN STD_LOGIC;
@@ -72,7 +72,7 @@ GENERIC (
         signal wren_a : IN STD_LOGIC;
         signal byteena_a : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
         signal clock0 : IN STD_LOGIC;
-        signal address_a : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+        signal address_a : IN STD_LOGIC_VECTOR (12 DOWNTO 0);
         signal clocken0 : IN STD_LOGIC;
         signal data_a : IN STD_LOGIC_VECTOR (31 DOWNTO 0)
       );
@@ -99,7 +99,7 @@ GENERIC (
 --        signal wren_a : IN STD_LOGIC;
 --        signal byteena_a : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
 --        signal clock0 : IN STD_LOGIC;
---        signal address_a : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+--        signal address_a : IN STD_LOGIC_VECTOR (12 DOWNTO 0);
 --        signal clocken0 : IN STD_LOGIC;
 --        signal data_a : IN STD_LOGIC_VECTOR (31 DOWNTO 0)
 --      );
@@ -121,15 +121,15 @@ begin
         byte_size => 8,
         init_file => INIT_FILE,
         lpm_type => "altsyncram",
-        maximum_depth => 60000,
-        numwords_a => 60000,
+        maximum_depth => 5000,
+        numwords_a => 5000,
         operation_mode => "SINGLE_PORT",
         outdata_reg_a => "UNREGISTERED",
         ram_block_type => "AUTO",
         read_during_write_mode_mixed_ports => "DONT_CARE",
         width_a => 32,
         width_byteena_a => 4,
-        widthad_a => 16
+        widthad_a => 13
       )
       port map(
                 address_a => address,
@@ -148,15 +148,15 @@ begin
 --        byte_size => 8,
 --        init_file => "onchip_memory2_0.hex",
 --        lpm_type => "altsyncram",
---        maximum_depth => 60000,
---        numwords_a => 60000,
+--        maximum_depth => 5000,
+--        numwords_a => 5000,
 --        operation_mode => "SINGLE_PORT",
 --        outdata_reg_a => "UNREGISTERED",
 --        ram_block_type => "AUTO",
 --        read_during_write_mode_mixed_ports => "DONT_CARE",
 --        width_a => 32,
 --        width_byteena_a => 4,
---        widthad_a => 16
+--        widthad_a => 13
 --      )
 --      port map(
 --                address_a => address,

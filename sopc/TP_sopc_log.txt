@@ -3,77 +3,76 @@ Copyright (c) 1999-2009 Altera Corporation.  All rights reserved.
 
 
 No .sopc_builder configuration file(!)
-# 2021.09.28 11:28:31 (*) mk_custom_sdk starting
-# 2021.09.28 11:28:31 (*) Reading project C:/PROJET_M2_VHDL_G4/sopc/TP_sopc.ptf.
+# 2021.09.28 11:40:13 (*) mk_custom_sdk starting
+# 2021.09.28 11:40:13 (*) Reading project C:/PROJET_M2_VHDL_G4/sopc/TP_sopc.ptf.
 
-# 2021.09.28 11:28:31 (*) Finding all CPUs
-# 2021.09.28 11:28:31 (*) Finding all available components
-# 2021.09.28 11:28:31 (*) Reading C:/PROJET_M2_VHDL_G4/sopc/.sopc_builder/install.ptf
+# 2021.09.28 11:40:13 (*) Finding all CPUs
+# 2021.09.28 11:40:13 (*) Finding all available components
 
-# 2021.09.28 11:28:31 (*) Found 63 components
+# 2021.09.28 11:40:13 (*) Reading C:/PROJET_M2_VHDL_G4/sopc/.sopc_builder/install.ptf
 
-# 2021.09.28 11:28:32 (*) Finding all peripherals
+# 2021.09.28 11:40:13 (*) Found 63 components
 
-# 2021.09.28 11:28:32 (*) Finding software components
+# 2021.09.28 11:40:13 (*) Finding all peripherals
 
-# 2021.09.28 11:28:32 (*) (Legacy SDK Generation Skipped)
-# 2021.09.28 11:28:32 (*) (All TCL Script Generation Skipped)
-# 2021.09.28 11:28:32 (*) (No Libraries Built)
-# 2021.09.28 11:28:32 (*) (Contents Generation Skipped)
-# 2021.09.28 11:28:32 (*) mk_custom_sdk finishing
-# 2021.09.28 11:28:32 (*) Starting generation for system: TP_sopc.
+# 2021.09.28 11:40:13 (*) Finding software components
+
+# 2021.09.28 11:40:13 (*) (Legacy SDK Generation Skipped)
+# 2021.09.28 11:40:13 (*) (All TCL Script Generation Skipped)
+# 2021.09.28 11:40:13 (*) (No Libraries Built)
+# 2021.09.28 11:40:13 (*) (Contents Generation Skipped)
+# 2021.09.28 11:40:13 (*) mk_custom_sdk finishing
+# 2021.09.28 11:40:13 (*) Starting generation for system: TP_sopc.
 
 .
 .
 ..
-.
-.
+..
 
-# 2021.09.28 11:28:32 (*) Running Generator Program for cpu_0
+# 2021.09.28 11:40:13 (*) Running Generator Program for cpu_0
 
-# 2021.09.28 11:28:33 (*) Starting Nios II generation
-# 2021.09.28 11:28:33 (*)   Checking for plaintext license.
-# 2021.09.28 11:28:33 (*)   Couldn't query license setup in Quartus directory c:/altera/11.0sp1/quartus
-# 2021.09.28 11:28:33 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-# 2021.09.28 11:28:33 (*)   LM_LICENSE_FILE environment variable is empty
-# 2021.09.28 11:28:33 (*)   Plaintext license not found.
-# 2021.09.28 11:28:33 (*)   No license required to generate encrypted Nios II/e.
+# 2021.09.28 11:40:14 (*) Starting Nios II generation
+# 2021.09.28 11:40:14 (*)   Checking for plaintext license.
+# 2021.09.28 11:40:14 (*)   Couldn't query license setup in Quartus directory c:/altera/11.0sp1/quartus
+# 2021.09.28 11:40:14 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+# 2021.09.28 11:40:14 (*)   LM_LICENSE_FILE environment variable is empty
+# 2021.09.28 11:40:14 (*)   Plaintext license not found.
+# 2021.09.28 11:40:14 (*)   No license required to generate encrypted Nios II/e.
 
-# 2021.09.28 11:28:33 (*)   Getting CPU configuration settings
-# 2021.09.28 11:28:33 (*)   Elaborating CPU configuration settings
-# 2021.09.28 11:28:33 (*)   Creating all objects for CPU
-# 2021.09.28 11:28:34 (*)   Generating HDL from CPU objects
-# 2021.09.28 11:28:34 (*)   Creating plain-text HDL
-# 2021.09.28 11:28:36 (*) Done Nios II generation
+# 2021.09.28 11:40:14 (*)   Getting CPU configuration settings
+# 2021.09.28 11:40:14 (*)   Elaborating CPU configuration settings
+# 2021.09.28 11:40:14 (*)   Creating all objects for CPU
+# 2021.09.28 11:40:15 (*)   Generating HDL from CPU objects
+# 2021.09.28 11:40:15 (*)   Creating plain-text HDL
+# 2021.09.28 11:40:17 (*) Done Nios II generation
 
-# 2021.09.28 11:28:36 (*) Running Generator Program for onchip_memory2_0
+# 2021.09.28 11:40:17 (*) Running Generator Program for onchip_memory2_0
 
-# 2021.09.28 11:28:37 (*) Running Generator Program for boutons
+# 2021.09.28 11:40:18 (*) Running Generator Program for boutons
 
-# 2021.09.28 11:28:37 (*) Running Generator Program for led
+# 2021.09.28 11:40:18 (*) Running Generator Program for led
 
-# 2021.09.28 11:28:38 (*) Running Generator Program for jtag_uart_0
+# 2021.09.28 11:40:18 (*) Running Generator Program for jtag_uart_0
 
-# 2021.09.28 11:28:38 (*) Running Generator Program for sysid_0
-
-
-# 2021.09.28 11:28:39 (*) Making arbitration and system (top) modules.
-
-# 2021.09.28 11:28:41 (*) Generating Quartus symbol for top level: TP_sopc
-
-# 2021.09.28 11:28:41 (*) Symbol C:/PROJET_M2_VHDL_G4/sopc/TP_sopc.bsf already exists, no need to regenerate
-# 2021.09.28 11:28:41 (*) Creating command-line system-generation script: C:/PROJET_M2_VHDL_G4/sopc/TP_sopc_generation_script
-
-# 2021.09.28 11:28:41 (*) Running setup for HDL simulator: modelsim
+# 2021.09.28 11:40:19 (*) Running Generator Program for sysid_0
 
 
-# 2021.09.28 11:28:41 (*) Completed generation for system: TP_sopc.
-# 2021.09.28 11:28:41 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+# 2021.09.28 11:40:19 (*) Making arbitration and system (top) modules.
+
+# 2021.09.28 11:40:21 (*) Generating Quartus symbol for top level: TP_sopc
+# 2021.09.28 11:40:21 (*) Symbol C:/PROJET_M2_VHDL_G4/sopc/TP_sopc.bsf already exists, no need to regenerate
+# 2021.09.28 11:40:21 (*) Creating command-line system-generation script: C:/PROJET_M2_VHDL_G4/sopc/TP_sopc_generation_script
+
+# 2021.09.28 11:40:21 (*) Running setup for HDL simulator: modelsim
+
+
+# 2021.09.28 11:40:21 (*) Completed generation for system: TP_sopc.
+# 2021.09.28 11:40:21 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
   SOPC Builder database : C:/PROJET_M2_VHDL_G4/sopc/TP_sopc.ptf 
   System HDL Model : C:/PROJET_M2_VHDL_G4/sopc/TP_sopc.vhd 
   System Generation Script : C:/PROJET_M2_VHDL_G4/sopc/TP_sopc_generation_script 
 
-# 2021.09.28 11:28:41 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+# 2021.09.28 11:40:21 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
 
 
 Press 'Exit' to exit.
