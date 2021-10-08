@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 288 352 456 368)
+	(rect 320 304 488 320)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "boutons[1..0]" (rect 5 0 69 12)(font "Arial" ))
 	(pt 168 8)
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 264 480 440 496)
+	(rect 272 624 448 640)
 	(text "OUTPUT" (rect 137 0 175 10)(font "Arial" (font_size 6)))
 	(text "leds[7..0]" (rect 5 0 51 12)(font "Arial" ))
 	(pt 176 8)
@@ -112,25 +112,48 @@ refer to the applicable agreement for further details.
 		(line (pt 0 0)(pt 0 184))
 	)
 )
-(connector
-	(pt 496 360)
-	(pt 456 360)
-	(bus)
-)
-(connector
-	(pt 496 488)
-	(pt 440 488)
-	(bus)
-)
-(connector
-	(pt 496 360)
-	(pt 496 392)
-	(bus)
-)
-(connector
-	(pt 496 488)
-	(pt 496 472)
-	(bus)
+(symbol
+	(rect 608 512 808 624)
+	(text "pwm_nano" (rect 5 0 56 12)(font "Arial" ))
+	(text "inst2" (rect 8 96 30 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset_n" (rect 0 0 36 12)(font "Arial" ))
+		(text "reset_n" (rect 21 43 57 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "FREQ[7..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "FREQ[7..0]" (rect 21 59 77 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "DUTY[7..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "DUTY[7..0]" (rect 21 75 77 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "PWM_OUT" (rect 0 0 54 12)(font "Arial" ))
+		(text "PWM_OUT" (rect 134 27 188 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 184 96))
+	)
 )
 (connector
 	(pt 496 392)
@@ -140,5 +163,25 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 496 472)
 	(pt 520 472)
+	(bus)
+)
+(connector
+	(pt 496 312)
+	(pt 488 312)
+	(bus)
+)
+(connector
+	(pt 496 392)
+	(pt 496 312)
+	(bus)
+)
+(connector
+	(pt 496 472)
+	(pt 496 632)
+	(bus)
+)
+(connector
+	(pt 496 632)
+	(pt 448 632)
 	(bus)
 )

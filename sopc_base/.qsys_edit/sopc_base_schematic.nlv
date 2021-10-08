@@ -1,8 +1,23 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
-preplace inst unsaved.clk_0 -pg 1 -lvl 1 -y 30
-preplace inst unsaved -pg 1 -lvl 1 -y 40 -regy -20
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
-preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)unsaved.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
-levelinfo -pg 1 0 50 270
-levelinfo -hier unsaved 60 90 260
+preplace inst sopc_base.clk -pg 1 -lvl 1 -y 640
+preplace inst sopc_base.leds -pg 1 -lvl 2 -y 500
+preplace inst sopc_base.cpu.cpu -pg 1
+preplace inst sopc_base.cpu.clock_bridge -pg 1
+preplace inst sopc_base -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst sopc_base.cpu.reset_bridge -pg 1
+preplace inst sopc_base.cpu -pg 1 -lvl 2 -y 50
+preplace inst sopc_base.sysid_qsys_0 -pg 1 -lvl 2 -y 420
+preplace inst sopc_base.boutons -pg 1 -lvl 2 -y 600
+preplace inst sopc_base.jtag_uart -pg 1 -lvl 2 -y 240
+preplace inst sopc_base.onchip_memory -pg 1 -lvl 2 -y 340
+preplace netloc POINT_TO_POINT<net_container>sopc_base</net_container>(MASTER)cpu.irq,(SLAVE)jtag_uart.irq) 1 1 2 470 230 830
+preplace netloc INTERCONNECT<net_container>sopc_base</net_container>(SLAVE)onchip_memory.reset1,(SLAVE)clk.clk_in_reset,(MASTER)cpu.debug_reset_request,(SLAVE)cpu.reset,(SLAVE)sysid_qsys_0.reset,(MASTER)clk.clk_reset,(SLAVE)leds.reset,(SLAVE)jtag_uart.reset,(SLAVE)boutons.reset) 1 0 3 210 610 410 210 850
+preplace netloc EXPORT<net_container>sopc_base</net_container>(SLAVE)sopc_base.boutons_external_connection,(SLAVE)boutons.external_connection) 1 0 2 NJ 630 NJ
+preplace netloc EXPORT<net_container>sopc_base</net_container>(MASTER)sopc_base.cpu_custom_instruction_master,(MASTER)cpu.custom_instruction_master) 1 2 1 N
+preplace netloc FAN_OUT<net_container>sopc_base</net_container>(SLAVE)jtag_uart.clk,(SLAVE)leds.clk,(MASTER)clk.clk,(SLAVE)cpu.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)onchip_memory.clk1,(SLAVE)boutons.clk) 1 1 1 430
+preplace netloc EXPORT<net_container>sopc_base</net_container>(SLAVE)sopc_base.clk,(SLAVE)clk.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>sopc_base</net_container>(SLAVE)leds.external_connection,(SLAVE)sopc_base.leds_external_connection) 1 0 2 NJ 530 NJ
+preplace netloc INTERCONNECT<net_container>sopc_base</net_container>(SLAVE)cpu.debug_mem_slave,(SLAVE)sysid_qsys_0.control_slave,(SLAVE)onchip_memory.s1,(SLAVE)jtag_uart.avalon_jtag_slave,(SLAVE)leds.s1,(MASTER)cpu.instruction_master,(SLAVE)boutons.s1,(MASTER)cpu.data_master) 1 1 2 450 190 870
+levelinfo -pg 1 0 180 1100
+levelinfo -hier sopc_base 190 240 590 890

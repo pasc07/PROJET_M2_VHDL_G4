@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>29 sept. 2021 00:56:24</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1632869784774</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>1 oct. 2021 08:08:23</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1633068503668</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\sopc_base\software\hello_wrld_test_bsp</BspGeneratedLocation>
-        <BspSettingsFile>.\settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\sopc_base.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>

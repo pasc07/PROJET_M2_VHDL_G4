@@ -4,12 +4,14 @@
  <systemtable filter="All Interfaces">
   <columns>
    <connections preferredWidth="143" />
-   <irq preferredWidth="34" />
-   <inputclock preferredWidth="195" />
+   <irq preferredWidth="47" />
+   <inputclock preferredWidth="89" />
+   <endaddress preferredWidth="112" />
+   <tags preferredWidth="141" />
+   <baseaddress preferredWidth="209" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Project,Library/Basic Functions,Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance,Library,Library/Basic Functions/Simulation; Debug and Verification" />
- <window width="3026" height="1946" x="-13" y="-13" />
+ <library expandedCategories="Library,Project" />
+ <window width="2416" height="1529" x="-9" y="0" />
  <generation synthesis="VHDL" />
 </preferences>
