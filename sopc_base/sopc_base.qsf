@@ -61,9 +61,6 @@ set_location_assignment PIN_D1 -to leds_external_connection_export[4]
 set_location_assignment PIN_F3 -to leds_external_connection_export[5]
 set_location_assignment PIN_B1 -to leds_external_connection_export[6]
 set_location_assignment PIN_L3 -to leds_external_connection_export[7]
-set_global_assignment -name VHDL_FILE pwm_nano.vhd
-set_global_assignment -name VHDL_FILE compteur_n_bits.vhd
-set_global_assignment -name VHDL_FILE comparateur.vhd
 set_global_assignment -name QSYS_FILE sopc_base.qsys
 set_global_assignment -name BDF_FILE sopc_base/sopc_base1.bdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
