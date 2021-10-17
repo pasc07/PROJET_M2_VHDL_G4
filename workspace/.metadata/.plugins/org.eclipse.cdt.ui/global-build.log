@@ -1,0 +1,27 @@
+20:13:15 **** Incremental Build of configuration Nios II for project test_leds ****
+make all 
+Info: Building ../test_leds_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../test_leds_bsp/
+[BSP build complete]
+Info: Compiling hello_world_small.c to obj/default/hello_world_small.o
+nios2-elf-gcc -xc -MP -MMD -c -I../test_leds_bsp//HAL/inc -I../test_leds_bsp/ -I../test_leds_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.c
+Info: Linking test_leds.elf
+nios2-elf-g++  -T'../test_leds_bsp//linker.x' -msys-crt0='../test_leds_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../test_leds_bsp/  -msmallc  -Wl,-Map=test_leds.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o test_leds.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert test_leds.elf --thread_model hal --cpu_name cpu --qsys true --simulation_enabled false --id 1 --sidp 0x21090 --timestamp 1634468453 --stderr_dev jtag --stdin_dev jtag --stdout_dev jtag --sopc_system_name sopc_be --quartus_project_dir "C:/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE" --jdi ../..//output_files/BE.jdi --sopcinfo C:/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds_bsp/../../sopc_be.sopcinfo
+Info: (test_leds.elf) 3368 Bytes program size (code + initialized data).
+Info:                 35 KBytes free for stack + heap.
+Info: Creating test_leds.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source test_leds.elf >test_leds.objdump
+[test_leds build complete]
+20:13:39 **** Build of configuration Nios II for project test_leds ****
+make all 
+Info: Building ../test_leds_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../test_leds_bsp/
+[BSP build complete]
+[test_leds build complete]
+20:13:41 **** Incremental Build of configuration Nios II for project test_leds ****
+make all 
+Info: Building ../test_leds_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../test_leds_bsp/
+[BSP build complete]
+[test_leds build complete]

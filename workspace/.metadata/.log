@@ -1,0 +1,435 @@
+!SESSION 2021-10-17 12:37:19.766 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2021-10-17 12:38:58.313
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
+	at com.google.gson.Gson.fromJson(Gson.java:803)
+	at com.google.gson.Gson.fromJson(Gson.java:768)
+	at com.google.gson.Gson.fromJson(Gson.java:717)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
+	... 9 more
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-17 12:41:23.769
+!MESSAGE Indexed 'test_led_bsp' (85 sources, 65 headers) in 4,2 sec: 1 301 declarations; 2 977 references; 116 unresolved inclusions; 6 syntax errors; 202 unresolved names (4,5 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-17 12:41:36.349
+!MESSAGE Indexed 'test_led' (1 sources, 0 headers) in 0,007 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 12:45:15.735
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634466861]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 12:45:19.631
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634466861 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_led/test_led.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 12:55:55.161
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 12:55:56.336
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634466861]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 12:56:00.120
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634466861 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_led/test_led.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:06:22.285
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2021-10-17 13:06:28.187
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: System timestamp mismatch - connected: "1634468453", expected: "1634466861".
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:631)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.altera.sbtgui.launch 4 0 2021-10-17 13:06:28.318
+!MESSAGE Unable to validate connection settings.
+!STACK 0
+java.lang.Exception: System timestamp mismatch - connected: "1634468453", expected: "1634466861".
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.assertTrue(SystemConsoleConnectionModel.java:645)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateSystemId(SystemConsoleConnectionModel.java:631)
+	at com.altera.embeddedsw.flash.model.internal.SystemConsoleConnectionModel.validateConnectionSettings(SystemConsoleConnectionModel.java:511)
+	at com.altera.sbtgui.launch.hardware.AbstractNios2CLaunchDelegate.launch(AbstractNios2CLaunchDelegate.java:115)
+	at com.altera.sbtgui.launch.hardware.Nios2HardwareLaunchDelegate.launch(Nios2HardwareLaunchDelegate.java:98)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.ltk.ui.refactoring 4 10000 2021-10-17 13:13:16.455
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:794)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not delete 'C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile'.
+org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:135)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile(ResourceTree.java:310)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:390)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:850)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1835)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:781)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not delete: C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile.
+Contains: Could not delete 'C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp'.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2021-10-17 13:13:16.457
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2021-10-17 13:13:16.457
+!MESSAGE Could not delete 'C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:135)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile(ResourceTree.java:310)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:390)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:850)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1835)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:781)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not delete: C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile.
+!SUBENTRY 3 org.eclipse.core.filesystem 4 273 2021-10-17 13:13:16.457
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2021-10-17 13:13:16.457
+!MESSAGE Could not delete: C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2021-10-17 13:13:16.457
+!MESSAGE Could not delete 'C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp'.
+
+!ENTRY org.eclipse.ltk.ui.refactoring 4 10000 2021-10-17 13:13:39.661
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:794)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not delete 'C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile'.
+org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:135)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile(ResourceTree.java:310)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:390)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:850)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1835)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:781)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not delete: C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile.
+Contains: Could not delete 'C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp'.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2021-10-17 13:13:39.662
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2021-10-17 13:13:39.662
+!MESSAGE Could not delete 'C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile'.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:135)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile(ResourceTree.java:310)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:390)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:850)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1835)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:781)
+	at org.eclipse.core.internal.resources.Project.delete(Project.java:323)
+	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: Could not delete: C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile.
+!SUBENTRY 3 org.eclipse.core.filesystem 4 273 2021-10-17 13:13:39.662
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2021-10-17 13:13:39.662
+!MESSAGE Could not delete: C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp\Makefile.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2021-10-17 13:13:39.662
+!MESSAGE Could not delete 'C:\Users\class\Desktop\M2\PROJET_M2_VHDL_G4\BE\software\test_led_bsp'.
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-17 13:15:51.884
+!MESSAGE Indexed 'test_leds_bsp' (85 sources, 65 headers) in 2,6 sec: 1 301 declarations; 2 977 references; 116 unresolved inclusions; 6 syntax errors; 202 unresolved names (4,5 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-17 13:15:58.536
+!MESSAGE Indexed 'test_leds' (1 sources, 0 headers) in 0,006 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:17:09.790
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:17:13.815
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:19:40.538
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:19:41.776
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:19:45.553
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:25:24.054
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:25:25.076
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:25:28.894
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:26:33.346
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:26:34.552
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:26:38.232
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:28:09.898
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:28:10.946
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:28:14.714
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:31:38.887
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:31:39.951
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:31:43.702
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:34:26.918
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:34:28.095
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 13:34:32.012
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 18:47:40.335
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 18:47:41.337
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 18:47:44.264
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 18:55:06.786
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 18:55:07.664
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 18:55:10.554
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:00:38.432
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:00:39.333
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:00:42.309
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:02:47.399
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:02:48.256
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:02:51.151
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-17 19:13:09.580
+!MESSAGE Indexed 'test_leds__bsp' (85 sources, 65 headers) in 1,61 sec: 1 301 declarations; 2 977 references; 116 unresolved inclusions; 6 syntax errors; 202 unresolved names (4,5 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-17 19:13:14.351
+!MESSAGE Indexed 'test_leds_' (1 sources, 0 headers) in 0,009 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:16:06.394
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:16:07.348
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:16:10.307
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds_/test_leds_.elf]
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-17 19:20:01.658
+!MESSAGE Indexed 'test_leds_bsp' (85 sources, 65 headers) in 1,65 sec: 1 301 declarations; 2 977 references; 116 unresolved inclusions; 6 syntax errors; 202 unresolved names (4,5 %)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-10-17 19:20:05.958
+!MESSAGE Indexed 'test_leds' (1 sources, 0 headers) in 0,005 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:24:01.556
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:24:02.269
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:24:04.636
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:29:05.424
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:29:06.182
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:29:08.561
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:30:07.354
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:30:08.136
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:30:10.479
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:33:44.001
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:33:44.784
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:33:47.164
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:39:32.014
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:39:32.767
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:39:35.110
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:45:08.474
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:45:09.330
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:45:11.694
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:55:41.449
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:55:42.210
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 19:55:44.620
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 20:05:15.380
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 20:05:16.160
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 20:05:18.568
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 20:11:14.538
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 20:11:15.329
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 20:11:17.712
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 20:13:42.524
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 20:13:43.323
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x21090 --id=0x1 --timestamp=1634468453]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2021-10-17 20:13:45.716
+!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x21090 --id=0x1 --timestamp=1634468453 /cygdrive/c/Users/class/Desktop/M2/PROJET_M2_VHDL_G4/BE/software/test_leds/test_leds.elf]
