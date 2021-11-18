@@ -55,9 +55,6 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name QSYS_FILE sopc_be.qsys
 set_global_assignment -name VHDL_FILE sopc_be_1.vhd
 set_global_assignment -name BDF_FILE BE.bdf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_R8 -to clk
 set_location_assignment PIN_M1 -to boutons[0]
 set_location_assignment PIN_L3 -to leds[7]
@@ -71,4 +68,8 @@ set_location_assignment PIN_A13 -to leds[1]
 set_location_assignment PIN_A15 -to leds[0]
 set_location_assignment PIN_B9 -to boutons[2]
 set_location_assignment PIN_M15 -to boutons[3]
+set_global_assignment -name VHDL_FILE avalon_pwm.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

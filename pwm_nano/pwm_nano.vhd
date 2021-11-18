@@ -50,7 +50,7 @@ inst1: compteur_n_bits port map (clk,rst,out_cpt);
 
 rst <= out_comp and (not reset_n);
 fix_freq <= "1110010011100001110000000"; --07A120 => 500000
-fix_duty <= "0111001001110000111000000"; --07D090 => 500 000/2
+fix_duty <= "0011100100111000011100000";-- rapport cycli 4 --07D090 => 500 000/4
 inst2: comparateur port map (fix_freq,out_cpt,out_comp); 
 
 inst3: comparateur port map (fix_duty,out_cpt,pwm);

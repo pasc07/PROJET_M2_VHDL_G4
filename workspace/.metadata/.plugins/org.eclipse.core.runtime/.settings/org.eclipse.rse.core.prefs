@@ -1,3 +1,4 @@
 activeuserprofiles=SURFACE-BOOK;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=pascal
+useridperkey=SURFACE-BOOK.Local\=pascal;
