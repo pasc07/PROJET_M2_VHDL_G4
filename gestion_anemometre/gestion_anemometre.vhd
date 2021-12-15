@@ -6,22 +6,30 @@ use ieee.numeric_std.all;
 
 entity gestion_anemometre is
 port( 
-
-  clk_50M: in std_logic;
-  in_freq_anemometre:in std_logic;
-  raz_n: in std_logic;
-  start_stop:in std_logic;
-  continu : in std_logic;
+clk_50M,chipselect, write_n, reset_n : in std_logic; 
+writedata : in std_logic_vector (31 downto 0); 
+readdata : out std_logic_vector (31 downto 0); 
+address: std_logic_vector (1 downto 0); 
+in_freq_anemometre: in std_logic
+); 
+end gestion_anemometre; 
   
-  data_valid:out std_logic;
-  data_anemometre:out std_logic_vector (7 downto 0) );
   
-end gestion_anemometre ;
 
 
 --Def de l'architecture
 architecture arch_gestion_anemometre of gestion_anemometre is
---For mapping
+-- For mapping
+-- signal clk_50M:  std_logic;
+ signal raz_n:  std_logic;
+ signal start_stop: std_logic;
+ signal continu : std_logic;
+ signal data_valid : std_logic;
+ signal data_anemometre : std_logic_vector (7 downto 0); 
+
+
+ 
+
 signal clk_05Hz:std_logic;
 signal clk_1Hz:std_logic;
 signal temp_out_compteur: std_logic_vector(7 downto 0);
@@ -36,15 +44,16 @@ signal temp_valid_2 : std_logic;
 signal in_freq_anemometre_2 : std_logic;
 signal acq : std_logic;
 signal init : std_logic;
-
+signal registre_int :  std_logic_vector(31 downto 0);
 --machine a etat
 --Entree
 type ETAT is (monocoup,mode_continu, acquisition);
 signal etat_present : ETAT := monocoup;
 signal etat_suivant : ETAT := monocoup;
 
---Components
 
+
+--Components
 
 
 component compteur is
@@ -75,13 +84,13 @@ port(
 	);
 end component;
 
-component refresh is
-port( 
-	clk_50MHz: in std_logic;
-	reset : in std_logic;
-	-- sortie
-	clk_1Hz: out std_logic );
-end component;
+--component refresh is
+--port( 
+--	clk_50MHz: in std_logic;
+--	reset : in std_logic;
+--	-- sortie
+--	clk_1Hz: out std_logic );
+--end component;
 
 
 begin
@@ -154,5 +163,32 @@ end if;
 END PROCESS;
 
 data_anemometre <= data;
+
+-- ecriture registre
+process_write: process (clk_50M, reset_n) 
+begin 
+	if reset_n = '0' then 
+		registre_int <= (others => '0'); 
+	elsif clk_50M'event and clk_50M = '1' then 
+		if chipselect ='1' and write_n = '0' then 
+
+			registre_int <= writedata; 
+			start_stop <= registre_int(2);
+			continu <= registre_int(1);
+			raz_n<= registre_int(0);
+		end if; 
+	end if;   
+end process; 
+ 
+-- lecture registres 
+
+PROCESS(address,data_anemometre, data_valid)  
+BEGIN 
+ case address is 
+	when "00" => readdata <= "00000000000000000000000000000"& start_stop & continu & raz_n ;
+	when "01" => readdata <= "0000000000000000000000"& data_valid & "0" & data_anemometre ; 
+	when others => readdata <= (others => '0');
+ end case; 
+END PROCESS ; 
 
 end arch_gestion_anemometre;

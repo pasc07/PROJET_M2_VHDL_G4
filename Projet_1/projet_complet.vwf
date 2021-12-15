@@ -216,7 +216,7 @@ TRANSITION_LIST("reset_freq")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 50000.0;
+		LEVEL 1 FOR 50000.0;
 	}
 }
 
